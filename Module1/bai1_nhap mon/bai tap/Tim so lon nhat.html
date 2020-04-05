@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tim So Lon Nhat</title>
+</head>
+<body>
+
+     <script>
+         let inputA;
+         let inputB;
+         let inputC;
+         inputA = prompt("enter the A");
+         inputB = prompt("enter the B");
+         inputC = prompt("enter the C");
+         let A = parseInt(inputA);
+         let B = parseInt(inputB);
+         let C = parseInt(inputC);
+         if (A>B&&A>C){
+             showMessage(A)
+         }
+         if (B>A&&B>C){
+             showMessage(B)
+         }
+         if (C>A&&C>B){
+             showMessage(C)
+         }
+         function showMessage(max) {
+             document.write (max+" La SoLonNhat");
+
+         }
+
+     </script>
+
+
+</body>
+</html>

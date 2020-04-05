@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính cước</title>
+</head>
+<body>
+      <h2> <label for="tinhcuoc">Tính giá cước điện thoại</label> </h2>
+      <h3> Số phút gọi </h3>
+      <h2> <input type="text" id="tinhcuoc"> </h2>
+      <button type="button" onclick="showMessage()">Tính tiền</button>
+      <h2> <input type="text" id="result"> </h2>
+      <script>
+          function showMessage() {
+              let result;
+              let sophut = document.getElementById("tinhcuoc");
+              if (sophut.value <= 50) {
+                  result = sophut.value * 600 + 25000;
+              } else if (sophut.value <= 200) {
+                  result = (sophut.value -50)*400 + 50*600 + 25000;
+              } else if (sophut.value > 200) {
+                  result = (sophut.value - 200)*200 + 50*600 + 150*400 + 25000;
+              }
+              document.getElementById("result").value = result;
+          }
+      </script>
+</body>
+</html>

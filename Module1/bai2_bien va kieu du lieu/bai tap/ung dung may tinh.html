@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ung dung may tinh</title>
+</head>
+<body>
+     <h2>
+         <label for="caculator">Caculator</label>
+     </h2>
+     <form>
+         <p> <input type="number" id="ketqua1" value="number1"> </p>
+     </form>
+     <form>
+         <p>  <input type="number" id="ketqua2" value="number2"> </p>
+     </form>
+     <p> <input id="result"> </p>
+     <button type="button" onclick="addition();">Addition(+):</button>
+     <button type="button" onclick="subtraction();">Subtraction(-):</button>
+     <button type="button" onclick="mutiplication();">Mutiplication(x):</button>
+     <button type="button" onclick="division();">Division(/):</button>
+     <script>
+         function addition() {
+             let ketqua1 = parseInt(document.getElementById("ketqua1").value);
+             let ketqua2 = parseInt(document.getElementById("ketqua2").value);
+             let result = ketqua1 + ketqua2;
+             document.getElementById("result").value = result
+         }
+         function subtraction() {
+             let ketqua1 = parseInt(document.getElementById("ketqua1").value);
+             let ketqua2 = parseInt(document.getElementById("ketqua2").value);
+             let result = ketqua1 - ketqua2;
+             document.getElementById("result").value = result
+         }
+         function mutiplication() {
+             let ketqua1 = parseInt(document.getElementById("ketqua1").value);
+             let ketqua2 = parseInt(document.getElementById("ketqua2").value);
+             let result = ketqua1 * ketqua2;
+             document.getElementById("result").value = result
+         }
+         function division() {
+             let ketqua1 = parseInt(document.getElementById("ketqua1").value);
+             let ketqua2 = parseInt(document.getElementById("ketqua2").value);
+             let result = ketqua1 / ketqua2;
+             document.getElementById("result").value = result
+         }
+
+     </script>
+
+
+</body>
+</html>

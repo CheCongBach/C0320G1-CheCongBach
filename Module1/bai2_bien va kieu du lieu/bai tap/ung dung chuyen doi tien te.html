@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>doi tien te</title>
+</head>
+<body>
+<h3><label for="amount">amount:</label></h3>
+<form>
+    <input type="number" id="amount">
+</form>
+
+<h3><label for="fromCurrency">fromeCurrency:</label></h3>
+<select id="fromCurrency">
+    <option value="VND">Viet Nam</option>
+    <option value="USD">USA</option>
+</select>
+
+<h3><label for="toCurrency">toCurrency:</label></h3>
+<select id="toCurrency">
+    <option value="VND">VND</option>
+    <option value="USD">USD</option>
+</select>
+<br><input id="result"></br>
+<br>
+<button type="button" onclick="convert();">convert</button>
+</br>
+<script>
+    function convert() {
+        let result = 0;
+        let amount = document.getElementById("amount");
+        let fromCurrency = document.getElementById("fromCurrency").value;
+        let toCurrency = document.getElementById("toCurrency").value;
+        if (fromCurrency === "VND" && toCurrency === "USD") {
+            result = parseInt(amount.value) / 23000;
+        } else if (fromCurrency === "USD" && toCurrency === "VND") {
+            result = parseInt(amount.value) * 23000;
+
+        } else {
+            alert("Yeu cau nguoi dung lua chon loai tien")
+        }
+        document.getElementById("result").value = result
+
+    }
+
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tinh Diem Trung Binh</title>
+</head>
+<body>
+ <button type="button" onclick="showMessage();">Click Me!</button>
+ <script>
+     let inputA;
+     let inputB;
+     let inputC;
+     inputA = prompt("enter the A")
+     inputB = prompt("enter the B")
+     inputC = prompt("enter the C")
+     let A = parseInt(inputA);
+     let B = parseInt(inputB);
+     let C = parseInt(inputC);
+     let DiemTrungBinh=(A+B+C)/3;
+     function showMessage (){
+         document.write(DiemTrungBinh);
+     }
+ </script>
+</body>
+</html>

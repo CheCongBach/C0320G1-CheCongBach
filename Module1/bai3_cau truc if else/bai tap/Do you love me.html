@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Do you love me</title>
+</head>
+<body>
+      <h1> <label for="nhandan">Do you love me?</label></h1>
+      <button type="button" onclick="showMessage()">Yes</button>
+      <button type="button" onmouseover="dichuyenchuot()" id="demo" style="position:absolute; left:250; top:150">No</button>
+      <script>
+          function showMessage() {
+               alert("<3");
+          }
+          function dichuyenchuot() {
+               let x = parseInt((Math.random() * window.innerWidth));
+               let y = parseInt((Math.random() * window.innerHeight));
+               document.getElementById('demo').style.left = x + 'px';
+               document.getElementById('demo').style.top = y + 'px';
+          }
+      </script>
+</body>
+</html>

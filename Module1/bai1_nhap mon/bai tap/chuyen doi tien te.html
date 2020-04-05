@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyen Doi Tien Te</title>
+</head>
+<body>
+    <button type="button" onclick="showMessage();">Click Me!</button>
+    <script>
+        let inputVND;
+        inputVND = prompt("enter the VND")
+        let VND = parseInt(inputVND);
+        let USD = VND/16000;
+        function showMessage (){
+            document.write(USD);
+        }
+
+    </script>
+
+</body>
+</html>

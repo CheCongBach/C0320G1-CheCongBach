@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="891b82fb-e1a2-4043-a565-5c0c126bdc4f" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1ZWDvHFPffUhX71TCHOUWfcBxhl" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="891b82fb-e1a2-4043-a565-5c0c126bdc4f" name="Default Changelist" comment="" />
+      <created>1584946185028</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1584946185028</updated>
+      <workItem from="1584946186510" duration="14079000" />
+      <workItem from="1584979274402" duration="828000" />
+      <workItem from="1584980849368" duration="3163000" />
+      <workItem from="1585128541088" duration="4000" />
+      <workItem from="1585128567042" duration="64000" />
+      <workItem from="1585228997565" duration="2639000" />
+      <workItem from="1585379108359" duration="5735000" />
+      <workItem from="1585552463603" duration="13354000" />
+      <workItem from="1585567257575" duration="8656000" />
+      <workItem from="1585587984339" duration="162000" />
+      <workItem from="1585636364294" duration="17030000" />
+      <workItem from="1585703937110" duration="32457000" />
+      <workItem from="1585814641746" duration="22214000" />
+      <workItem from="1585878880502" duration="21448000" />
+      <workItem from="1586013739194" duration="9762000" />
+      <workItem from="1586098623977" duration="3904000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="416" y="153" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1585640964483">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="416" y="153" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1585640964483" />
+  </component>
+</project>
