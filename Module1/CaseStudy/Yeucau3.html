@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Yêu cầu 3</title>
+</head>
+<body>
+      <h3>Địa chỉ email <input type="text" id="email1"> <button type="button" onclick="showMessage()">Kiểm tra</button></h3>
+      <h3>Số chứng minh nhân dân <input type="text" id="cmnd"> <button type="button" onclick="showMessage1()">Kiểm tra</button></h3>
+      <h3>Ngày tháng năm sinh <input type="text" id="birthday"> <button type="button" onclick="showMessage2()">Kiểm tra</button></h3>
+      <h3>Số ngày thuê <input type="text" id="rentDay"> <button type="button" onclick="showMessage3()">Kiểm tra</button></h3>
+      <h3>Số người đi kèm <input type="text" id="people"> <button type="button" onclick="showMessage4()">Kiểm tra</button></h3>
+      <script>
+          let email = document.getElementById("email1");
+          let cmnd = document.getElementById("cmnd");
+          let birthday = document.getElementById("birthday");
+          let rentDay = document.getElementById("rentDay");
+          let people = document.getElementById("people");
+          let check = false;
+          function showMessage() {
+            do {
+                document.write(email.value);
+                check = true;
+            } while (email.value == abc.abc@abc);
+            if (check) {
+                alert("Yêu cầu nhập lại")
+            }
+          }
+      </script>
+
+</body>
+</html>

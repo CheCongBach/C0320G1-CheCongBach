@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chèn đấu - giữa 2 số chẵn</title>
+</head>
+<body>
+       <script>
+           let number = prompt("Nhập một dãy số");
+           let x = [];
+           let i;
+           x.push(number[0]);
+           for (i = 1; i < number.length; i++) {
+               if ((number[i-1] % 2 === 0) && (number[i] % 2 === 0)) {
+                   x.push("-");
+                   x.push(number[i]);
+               } else {
+                   x.push(number[i]);
+               }
+           }
+           document.write(x.join(" "));
+       </script>
+</body>
+</html>

@@ -17,6 +17,7 @@
          let rentDay = parseInt(prompt("Số ngày thuê", ""));
          let typeService = prompt("Loại dich vụ", "");
          let typeRoom = prompt("Loại phòng thuê", "");
+         document.write("name:"+name+"<br>"+"cmnd:"+cmnd+"<br>"+"birthday:"+birthday+"<br>"+"email:"+email+"<br>"+"address"+address+"<br>"+"typeCustomer"+typeCustomer+"<br>"+"discount"+discount+"<br>"+"soluongdikem"+soluongdikem+"<br>")
          let totalPay;
          if (typeRoom == "villa") {
              totalPay = 500 * rentDay * (1 - discount/100);

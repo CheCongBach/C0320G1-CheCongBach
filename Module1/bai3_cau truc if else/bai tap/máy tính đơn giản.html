@@ -5,103 +5,47 @@
     <title>Máy tính</title>
 </head>
 <body>
-    <h2> <label for="mayTinh">Ứng dụng máy tính</label></h2>
-    <h3> <input tye="text" id="ketqua1"> </h3>
-    <table>
-      <tr>
-          <td> <button type="button" onclick="showMessage1('number1')" id="number1">1</button> </td>
-          <td> <button type="button" onclick="showMessage2('number2')" id="number2">2</button> </td>
-          <td> <button type="button" onclick="showMessage3('number3')" id="number3">3</button> </td>
-          <td> <button type="button" onclick="phepCong('phepCong')" id="phepCong">+</button> </td>
-      </tr>
-
-      <tr>
-          <td> <button type="button" onclick="showMessage4('number4')" id="number4">4</button> </td>
-          <td> <button type="button" onclick="showMessage5('number5')" id="number5">5</button> </td>
-          <td> <button type="button" onclick="showMessage6('number6')" id="number6">6</button> </td>
-          <td> <button type="button" onclick="phepTru('phepTru')" id="phepTru">-</button> </td>
-      </tr>
-
-      <tr>
-          <td> <button type="button" onclick="showMessage7('number7')" id="number7">7</button> </td>
-          <td> <button type="button" onclick="showMessage8('number8')" id="number8">8</button> </td>
-          <td> <button type="button" onclick="showMessage9('number9')" id="number9">9</button> </td>
-          <td> <button type="button" onclick="phepNhan('phepNhan')" id="phepNhan">x</button> </td>
-      </tr>
-
-      <tr>
-          <td> <button type="button" onclick="showMessageC('xoaGiatri')" id="xoaGiatri">C</button> </td>
-          <td> <button type="button" onclick="showMessage0('number0')" id="number0">0</button> </td>
-          <td> <button type="button" onclick="showMessage('dauBang')" id="dauBang">=</button> </td>
-          <td> <button type="button" onclick="phepChia('phepChia')" id="phepChia">/</button> </td>
-      </tr>
-    </table>
-    <script>
-       function showMessage1() {
-          let ketqua1 = 1;
-          document.getElementById("ketqua1").value += ketqua1 ;
-       }
-       function showMessage2() {
-           let ketqua1 = 2;
-           document.getElementById("ketqua1").value += ketqua1;
-       }
-       function showMessage3() {
-           let ketqua1 = 3;
-           document.getElementById("ketqua1").value += ketqua1;
-       }
-       function showMessage4() {
-           let ketqua1 = 4;
-           document.getElementById("ketqua1").value += ketqua1;
-       }
-       function showMessage5() {
-           let ketqua1 = 5;
-           document.getElementById("ketqua1").value += ketqua1;
-       }
-       function showMessage6() {
-           let ketqua1 = 6;
-           document.getElementById("ketqua1").value += ketqua1;
-       }
-       function showMessage7() {
-           let ketqua1 = 7;
-           document.getElementById("ketqua1").value += ketqua1;
-       }
-       function showMessage8() {
-           let ketqua1 = 8;
-           document.getElementById("ketqua1").value += ketqua1;
-       }
-       function showMessage9() {
-           let ketqua1 = 9;
-           document.getElementById("ketqua1").value += ketqua1;
-       }
-       function showMessage0() {
-           let ketqua1 = 0;
-           document.getElementById("ketqua1").value += ketqua1;
-       }
-       function phepCong() {
-           let ketqua1 = "+";
-           document.getElementById("ketqua1").value += ketqua1;
-       }
-       function phepTru() {
-           let ketqua1 = "-";
-           document.getElementById("ketqua1").value += ketqua1;
-       }
-       function phepNhan() {
-           let ketqua1 = "*";
-           document.getElementById("ketqua1").value = ketqua1;
-       }
-       function phepChia() {
-           let ketqua1 = "/";
-           document.getElementById("ketqua1").value += ketqua1;
-       }
-       function showMessageC() {
-           let ketqua1 = " ";
-           document.getElementById("ketqua1").value = ketqua1;
-       }
-
-
-
-
-    </script>
+<table>
+    <tr>
+        <td colspan="4"><input type="text" id="ketQua"></td>
+    </tr>
+    <tr>
+        <td><button onclick="nhap('1')">1</button></td>
+        <td><button onclick="nhap('2')">2</button></td>
+        <td><button onclick="nhap('3')">3</button></td>
+        <td><button onclick="nhap('+')">+</button></td>
+    </tr>
+    <tr>
+        <td><button onclick="nhap('4')">4</button></td>
+        <td><button onclick="nhap('5')">5</button></td>
+        <td><button onclick="nhap('6')">6</button></td>
+        <td><button onclick="nhap('-')">-</button></td>
+    </tr>
+    <tr>
+        <td><button onclick="nhap('7')">7</button></td>
+        <td><button onclick="nhap('8')">8</button></td>
+        <td><button onclick="nhap('9')">9</button></td>
+        <td><button onclick="nhap('*')">*</button></td>
+    </tr>
+    <tr>
+        <td><button onclick="xoaGiaTri()">C</button></td>
+        <td><button onclick="nhap('0')">0</button></td>
+        <td><button onclick="tinhToan()">=</button></td>
+        <td><button onclick="nhap('/')">/</button></td>
+    </tr>
+</table>
+<script>
+    let ketQua = document.getElementById("ketQua");
+    function nhap(so) {
+        ketQua.value += so;
+    }
+    function tinhToan() {
+        ketQua.value = eval(ketQua.value);
+    }
+    function xoaGiaTri() {
+        ketQua.value = "";
+    }
+</script>
 
 </body>
 </html>

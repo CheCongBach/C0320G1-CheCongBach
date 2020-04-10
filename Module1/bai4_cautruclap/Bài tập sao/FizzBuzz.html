@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FizzBuzz</title>
+</head>
+<body>
+      <script>
+          let i;
+          let count = 1;
+          let number = 1;
+          while (count <= 100) {
+              if (number % 3 != 0 && number % 5 != 0) {
+                  document.write(number + "<br>")
+              }  else if (number % 3 == 0 && number % 5 == 0) {
+                  document.write("FizzBuzz" + "<br>");
+              }  else if (number % 3 == 0) {
+                  document.write("Fizz" + "<br>");
+              }  else if (number % 5 == 0) {
+                  document.write("Buzz" + "<br>");
+              }
+              count++
+              number++
+          }
+      </script>
+</body>
+</html>
