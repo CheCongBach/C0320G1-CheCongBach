@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Yêu cầu 4</title>
+</head>
+<body>
+<script>
+    let tenKhachhang = ["Bách","Khoa","Hải","Vũ","Quốc","Danh"];
+    tenKhachhang.sort();
+    function hienThi() {
+        document.body.innerHTML = "";
+        let i;
+        let j;
+        let sout;
+        sout =  "<input type=\"text\"; id=\"duLieu\"> <button type=\"button\" onclick=\"showMessage()\">Thêm tên khách hàng</button>" +
+            "<table border=1; width=500; cellpadding=3; cellspacing=1>";
+        for (i=0,j=1; i < tenKhachhang.length; i++,j++) {
+            sout = sout + "<tr>";
+            sout = sout + "<td>" + j + "</td>";
+            sout = sout + "<td>" + tenKhachhang[i] + "</td>";
+            sout = sout + "<td>" + "<button type='button' onclick='showMessage1("+i+")'>Xóa khỏi danh sách</button>" + "</td>";
+            sout = sout + "<td>" + "<button type='button' onclick='showMessage2("+i+")'>Sửa tên khách hàng</button>" + "</td>";
+            sout = sout + "</tr>";
+        }
+        sout = sout + "</table>";
+        document.write(sout);
+    }
+    function showMessage() {
+         let name = document.getElementById("duLieu").value;
+         themTenkhachhang(name);
+    }
+    function themTenkhachhang(name) {
+         tenKhachhang.push(name);
+         hienThi();
+    }
+    function showMessage1(index) {
+        if (confirm("Bạn có thật sự muốn xóa: " + tenKhachhang[index] + " hay không? ")) {
+            tenKhachhang.splice(index,1);
+        }
+        hienThi();
+    }
+    function showMessage2(index) {
+        let name1 = prompt("Nhập tên khách hàng thay thế: ");
+        tenKhachhang[index] = name1;
+        hienThi();
+    }
+    hienThi();
+</script>
+</body>
+</html>

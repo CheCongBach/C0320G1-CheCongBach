@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra từ đối xứng</title>
+</head>
+<body>
+      <script>
+          function isPalindrome(s) {
+              let i;
+              for (i=0; i < s.length/2; i++) {
+                  if (s[i] !== s[s.length - i -1]) {
+                      return false;
+                  } else {
+                      return true;
+                  }
+              }
+          }
+          let x = isPalindrome("abccba");
+          alert(x);
+      </script>
+</body>
+</html>

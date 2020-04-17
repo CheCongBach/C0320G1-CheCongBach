@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lớp temperature</title>
+</head>
+<body>
+      <script>
+          let temperature = function (nhietdo) {
+              this.nhietDo = nhietdo;
+
+              this.getdoF = function () {
+                  let doF = (this.nhietDo * 1.8) + 32;
+                  return doF;
+              }
+              this.getkenVin = function () {
+                  let kenVin = this.nhietDo + 273;
+                  return kenVin;
+              }
+          }
+          let nhietDo = new temperature(25);
+          let doF = nhietDo.getdoF();
+          let kenVin = nhietDo.getkenVin();
+          document.write("Độ F: " + doF + "<br/>" + "Kenvin: " + kenVin);
+      </script>
+</body>
+</html>

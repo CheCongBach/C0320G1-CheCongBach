@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 1</title>
+</head>
+<body>
+     <h3>Nhập số <input type="text" id="number1"></h3>
+     <h3>Kết quả <input type="text" id="ketqua"> <button type="button" onclick="showMessage()">Hiển thị</button></h3>
+     <script>
+         function binhPhuong(number) {
+               let result = number * number;
+               return result;
+         }
+         function showMessage() {
+            let number2 = document.getElementById("number1").value;
+            let result1 = binhPhuong(number2);
+            document.getElementById("ketqua").value = result1;
+         }
+     </script>
+</body>
+</html>

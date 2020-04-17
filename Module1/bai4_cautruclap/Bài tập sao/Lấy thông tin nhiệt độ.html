@@ -7,11 +7,12 @@
 <body>
         <script>
             let nhietDo = parseInt(prompt("Nhập nhiệt độ", ""));
-            while (nhietDo < 20) {
-                alert("Yêu cầu người dùng tăng nhiệt độ");
-            }
-            while (nhietDo > 100) {
-                alert("Yêu cầu người dùng giảm nhiệt độ");
+            while (20 < nhietDo < 100) {
+                if (nhietDo < 20) {
+                    alert("Yêu cầu người dùng tăng nhiệt độ");
+                } else if (nhietDo > 100) {
+                    alert("Yêu cầu người dùng giảm nhiệt độ")
+                }
             }
         </script>
 </body>

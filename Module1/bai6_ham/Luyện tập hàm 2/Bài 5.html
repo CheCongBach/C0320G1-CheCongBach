@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 5</title>
+</head>
+<body>
+    <script>
+        function kiemTra() {
+             let a = parseInt(prompt("Nhập số A"));
+             let b = parseInt(prompt("Nhập số B"));
+             let c = parseInt(prompt("Nhập số C"));
+             if (a < b && a < c) {
+                 alert("A là số nhỏ nhất");
+             } else if (b < a && b < c) {
+                 alert("B là số nhỏ nhất");
+             } else if (c < a && c < b) {
+                 alert("C là số nhỏ nhất");
+             }
+        }
+        let result = kiemTra();
+        alert(result);
+    </script>
+</body>
+</html>

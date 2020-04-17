@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 5</title>
+</head>
+<body>
+     <script>
+         function chomSao(arr1,arr2) {
+             let arr = prompt("Nhập tên chòm sao");
+             let arr3 = [];
+             let i = arr1.indexOf(arr);
+             if (i !== -1) {
+                 arr3.push(arr2[i]);
+             } else {
+                 alert("Không tìm thấy chòm sao tương ứng");
+             }
+            alert(arr3[0]);
+         }
+         let chomSao2 = ["Polaris","Aldebaran","Deneb","Vega","Altair","Dubhe,Regulus"];
+         let chomSao3 = ["Ursa Minor","Tarurus","Cygnus","Lyra","Aquila","Ursa Major","Leo"];
+         let result1 = chomSao(chomSao2,chomSao3);
+         alert(result1);
+     </script>
+</body>
+</html>

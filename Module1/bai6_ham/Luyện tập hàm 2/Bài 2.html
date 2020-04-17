@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2</title>
+</head>
+<body>
+      <script>
+          function hinhTron(number) {
+              const pi = 3.14;
+              let result1 = pi*number*number;
+              return result1;
+          }
+          function hinhTron1(number) {
+              const pi = 3.14;
+              let result2 = 2*pi*number;
+              return result2;
+          }
+          let number2 = parseInt(prompt("Nhập bán kính"));
+          let result3 = hinhTron(number2);
+          let result4 = hinhTron1(number2);
+          document.write("Diện tích và chu vi của hình tròn là: " + result3 + " và " + result4);
+      </script>
+</body>
+</html>

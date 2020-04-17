@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển đổi nhiệt độ</title>
+</head>
+<body>
+     <h1>Chuyển đổi nhiệt độ</h1>
+     <h3> Độ C <input type="text" id="doC"> </h3>
+     <h3> Độ F <input type="text" id="doF"> </h3>
+     <button type="button" onclick="showMessage()">Hiển thị</button>
+     <script>
+         function chuyenDOinhietdo(number) {
+             let result = (number-32)/1.8;
+             return result;
+         }
+         function showMessage() {
+                 let number1 = document.getElementById("doC").value;
+                 let result1 = chuyenDOinhietdo(number1);
+                 document.getElementById("doF").value = result1;
+         }
+     </script>
+</body>
+</html>

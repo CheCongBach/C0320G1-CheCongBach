@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lớp Date</title>
+</head>
+<body>
+<script>
+    let myDate = function (day,month,year) {
+        this.day = day;
+        this.month = month;
+        this.year = year;
+
+        this.getDay = function () {
+            return this.day;
+        }
+        this.getMonth = function () {
+            return this.month;
+        }
+        this.getYear = function () {
+            return this.year;
+        }
+
+        this.setDay = function (day) {
+            this.day = day;
+            return day;
+        }
+        this.setMonth = function (month) {
+            this.month = month;
+            return month
+        }
+        this.setYear = function (year) {
+            this.year = year;
+            return year;
+        }
+
+    }
+    let date = new myDate(14,4,2020);
+    let day = date.getDay();
+    let month = date.getMonth();
+    let year = date.getYear();
+    alert(day + "/" + month + "/" + year);
+
+    let days = date.setDay(13);
+    let months = date.setMonth(5);
+    let years = date.setYear(2020);
+    alert(days + "/" + months + "/" + years);
+</script>
+</body>
+</html>

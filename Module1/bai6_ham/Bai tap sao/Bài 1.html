@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quản lí sản phẩm</title>
+</head>
+<body>
+<form>
+    <h3> Tên sản phẩm thêm mới  </h3>
+</form>
+<script>
+    function hienThi(array) {
+        let i;
+        let j;
+        let sout;
+        sout = "<input type=\"text\"; id=\"duLieu\"> <button type=\"button\" onclick=\"showMessage()\">Add</button>" +
+            "<table border=1; width=500; cellpadding=3; cellspacing=1>";
+        for (i=0,j=1; i < array.length ; i++,j++) {
+            sout = sout + "<tr>";
+            sout = sout + "<td>" + j + "</td>";
+            sout = sout + "<td>" + array[i] + "</td>";
+            sout = sout + "<td>" + "<button type='button' onclick='showMessage1("+i+")'>Edit</button>" + "</td>";
+            sout = sout + "<td>" + "<button type='button' onclick='showMessage2()'>Delete</button>" + "</td>";
+            sout = sout + "</tr>"
+        }
+        sout = sout + "</table>";
+        return sout;
+    }
+    let telePhone = ["Sony","Samsung","Nokia","Xiaomi","Apple","Oppo"];
+    let result = hienThi(telePhone);
+    document.write(result);
+
+    function themSanpham(array) {
+        let i = document.getElementById("duLieu");
+        array.push(i.value);
+        return array;
+    }
+    function showMessage() {
+         let result1 = themSanpham(telePhone);
+         let result = hienThi(result1);
+         document.body.innerHTML = "";
+         document.write(result);
+    }
+    function xoaSanpham(array) {
+         let index = 0 ;
+         if(confirm("Bạn có thật sự muốn xóa product " + array[index] + " hay không?")) {
+             array.splice(index,1);
+        }
+         return array;
+    }
+    function showMessage2() {
+         document.body.innerHTML = "";
+         let result2 = xoaSanpham(telePhone);
+         let result = hienThi(result2);
+         document.write(result);
+    }
+    function showMessage1(index) {
+         let result3 = prompt("Nhập tên sản phẩm thay thế");
+         telePhone[index] = result3;
+         let result = hienThi(telePhone);
+         document.body.innerHTML = "";
+         document.write(result);
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lớp hình tròn</title>
+</head>
+<body>
+<script>
+    let Circle = function (radius) {
+        this.Radius = radius;
+
+        this.getRadius = function () {
+            return this.Radius;
+        }
+        this.getArea = function () {
+            const Pi = 3.14;
+            let Area = Pi * radius * radius;
+            return Area;
+        }
+    }
+
+    let circle = new Circle(2);
+    let Radius = circle.getRadius();
+    let Area = circle.getArea();
+    alert("Radius " + Radius + "Area " + Area);
+</script>
+</body>
+</html>

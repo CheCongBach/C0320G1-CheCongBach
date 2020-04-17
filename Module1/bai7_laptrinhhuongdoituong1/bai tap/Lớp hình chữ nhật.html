@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lớp hình chữ nhật</title>
+</head>
+<body>
+      <canvas id="myCanvas" width="1380px" height="768px" style="border:1px solid #d3d3d3;"></canvas>
+      <script>
+          let hinhChuNhat = function (chieudai,chieurong) {
+                  this.chieudai = chieudai;
+                  this.chieurong = chieurong;
+
+              this.getChieuDai = function () {
+                  return this.chieudai;
+              }
+              this.getChieuRong = function () {
+                  return this.chieurong;
+              }
+              this.getdienTich = function () {
+                  let dienTich = this.chieudai * this.chieurong;
+                  return dienTich;
+              }
+              this.getChuvi = function () {
+                  let chuVi = (this.chieudai + this.chieurong) * 2;
+                  return chuVi;
+              }
+
+              this.createChunhat = function () {
+                  let ctx = document.getElementById("myCanvas");
+                  ctx = ctx.getContext("2d");
+                  ctx.beginPath();
+                  ctx.fillRect(0,0,this.chieudai,this.chieurong);
+                  ctx.stroke();
+              }
+          }
+          let x = parseInt(prompt("Nhập chiều dài"));
+          let y = parseInt(prompt("Nhập chiều rộng"));
+          let chuNhat = new hinhChuNhat(x,y);
+          let chieuDai = chuNhat.getChieuDai();
+          let chieuRong = chuNhat.getChieuRong();
+          let dienTich = chuNhat.getdienTich();
+          let chuVi = chuNhat.getChuvi();
+          let veHinh = chuNhat.createChunhat();
+          alert("Chiều dài: " + chieuDai + "Chiều rộng: " + chieuRong + "Diện tích: " + dienTich + "Chu vi: " + chuVi );
+          document.write(veHinh);
+
+      </script>
+</body>
+</html>
