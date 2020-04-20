@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mèo bắt chuột</title>
+</head>
+<body>
+     <script>
+         class Mouse {
+             constructor(name,khoiLuong,tocDo,trangThai) {
+                 this.name = name;
+                 this.khoiLuong = khoiLuong;
+                 this.tocDo = tocDo;
+                 this.trangThai = trangThai;
+             }
+             hanhvi() {
+                 alert("Chuột kêu chít chít");
+             }
+         }
+         class Cat {
+             constructor(name1,khoiLuong1,tocDo1,trangThai1) {
+                 this.name1 = name1;
+                 this.khoiLuong1 = khoiLuong1;
+                 this.tocDo1 = tocDo1;
+                 this.trangThai1 = trangThai1;
+             }
+             hanhvi1() {
+                 alert("Mèo kêu meo meo");
+             }
+             hanhvi2(mouse) {
+                 if (this.tocDo1 > mouse.tocDo) {
+                     alert("Bắt được con chuột");
+                 }
+             }
+             hanhvi3(mouse) {
+                 if (mouse.trangThai === "Chết") {
+                     alert("Mèo bỏ đi");
+                 } else if (mouse.trangThai === "Sống") {
+                     alert("Mèo ăn thịt chuột");
+                 }
+             }
+             hanhvi4(mouse) {
+                 if (mouse.trangThai === "Sống") {
+                     while (mouse.khoiLuong > 0) { // Dùng for thì chỉ chạy tới 2 là dừng
+                         alert("Ăn thịt chuột");
+                         let khoiLuong = ++this.khoiLuong1;
+                         let khoiLuong1 = --mouse.khoiLuong;
+                         alert("Khối lượng con mèo: " + khoiLuong + " Khối lượng con chuột: " + khoiLuong1);
+                     }
+                     alert("Ăn xong con chuột");
+                 }
+             }
+         }
+         let chuot = prompt("Nhập trạng thái của chuột: ");
+         let chuot1 = new Mouse("Jerry",5,20,chuot);
+         let cat = new Cat("Tom",15,30,"Sống");
+         let chuot2 = chuot1.hanhvi();
+         let cat1 = cat.hanhvi1();
+         let cat2 = cat.hanhvi2(chuot1);
+         let cat3 = cat.hanhvi3(chuot1);
+         let cat4 = cat.hanhvi4(chuot1);
+     </script>
+</body>
+</html>

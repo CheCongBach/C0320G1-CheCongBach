@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Công tắc và bóng đèn</title>
+</head>
+<body>
+     <script>
+        let trangThai = function (batCongTac,tatCongTac,bongDen1,bongDen2) {
+            this.batCongTac = batCongTac;
+            this.tatCongTac = tatCongTac;
+            this.bongDen1 = bongDen1;
+            this.bongDen2 = bongDen2;
+            this.batTatCongTac = function () {
+                for (let i = 0; i < 10; i++) {
+                    alert("Công tắc: " + this.batCongTac + " Bóng đèn: " + this.bongDen1);
+                    alert("Công tắc: " + this.tatCongTac + " Bóng đèn: " + this.bongDen2);
+                }
+            }
+        }
+        let trangThai1 = new trangThai("Bật","Tắt","Sáng","Tối");
+        let bongDEN = trangThai1.batTatCongTac();
+     </script>
+</body>
+</html>

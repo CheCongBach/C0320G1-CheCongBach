@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Adam và eva</title>
+</head>
+<body>
+       <script>
+         let cauChuyen = function (name,gioiTinh,canNang,apple) {
+             this.name = name;
+             this.gioiTinh = gioiTinh;
+             this.canNang = canNang;
+             this.apple = apple;
+             this.getName = function () {
+                 return this.name;
+             }
+             this.getGioiTinh = function () {
+                 return this.gioiTinh;
+             }
+             this.getCanNang = function () {
+                 return this.canNang;
+             }
+             this.getApple = function () {
+                 return this.apple;
+             }
+             this.noiMotChuoiKiTu = function () {
+                 alert("Nói: " + " HALELUGIA");
+             }
+             this.kiemTra = function () {
+                 if (this.apple > 0) {
+                     alert("Cân nặng quả táo là: " + this.apple);
+                 }
+             }
+             this.anTao = function () {
+                 let i;
+                 if (this.apple > 0) {
+                     for (i=0; i < 10; i++) {
+                         alert("Ăn táo");
+                         let canNang1 = ++ this.canNang ;
+                         let apple1 = -- this.apple;
+                         alert("Cân nặng sau khi ăn: " + canNang1 + " Khối lượng quả táo sau khi cắn: " + apple1);
+                     }
+                 }
+                 alert("Ăn xong quả táo");
+             }
+         }
+         let Human = new cauChuyen("Adam","men",55,10);
+         let name = Human.getName();
+         let gioiTinh = Human.getGioiTinh();
+         let canNang = Human.getCanNang();
+         let Apple = Human.getApple();
+         alert("Tên: " + name +  " Giới tính: " + gioiTinh +  " Cân nặng: " + canNang +  " Qủa táo: " + Apple);
+         let noiKitu = Human.noiMotChuoiKiTu();
+         let kiemTra = Human.kiemTra();
+         let anTao = Human.anTao();
+       </script>
+</body>
+</html>

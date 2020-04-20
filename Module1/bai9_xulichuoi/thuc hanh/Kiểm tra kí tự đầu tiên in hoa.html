@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra</title>
+</head>
+<body>
+     <script>
+          function kiemTraKiTuDau(str) {
+              let regexp = /^[A-Z]/;
+              if (regexp.test(str)) {
+                  alert("Kí tự đầu tiên của chuỗi in hoa");
+              } else {
+                  alert("Kí tự đầu tiên của chuỗi không in hoa");
+              }
+          }
+          let str = kiemTraKiTuDau("Che cong bach");
+     </script>
+</body>
+</html>

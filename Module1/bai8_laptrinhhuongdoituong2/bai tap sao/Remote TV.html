@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Remote TV</title>
+</head>
+<body>
+     <script>
+        class remoteTV {
+            constructor(maDieuKhien1,maDieuKhien2,maDieuKhien3) {
+                this.maDieuKhien1 = maDieuKhien1;
+                this.maDieuKhien2 = maDieuKhien2;
+                this.maDieuKhien3 = maDieuKhien3;
+            }
+        }
+        class tiVi {
+            constructor(trangThai,amLuong,kenhDangPhat) {
+                this.trangThai = trangThai;
+                this.amLuong = amLuong;
+                this.kenhDangPhat = kenhDangPhat;
+            }
+            getTrangThai () {
+                return this.trangThai;
+            }
+            getAmLuong () {
+                return this.amLuong;
+            }
+            batTiVi (remote1) {
+                if (remote1.maDieuKhien1 === "On") {
+                    alert("Bật tivi");
+                } else if (remote1.maDieuKhien1 === "Off") {
+                    alert("Tắt tivi");
+                }
+            }
+            getKenhDangPhat () {
+                return this.kenhDangPhat;
+            }
+            chuyenKenh (remote1,remote2) {
+                if (remote1.maDieuKhien1 === "On") {
+                    if (remote2.maDieuKhien2 === "ba" ) {
+                        alert("Dùng remote chuyển đến kênh Ba");
+                    } else if (remote2.maDieuKhien2 !== "ba") {
+                        alert("Chuyển đến kênh khác không phải kênh Ba");
+                    }
+                }
+            }
+            tangGiamAmLuong (remote1,remote3) {
+                if (remote1.maDieuKhien1 === "On") {
+                    if (remote3.maDieuKhien3 === "+") {
+                        for (let i = 0; i < 2; i++) {
+                            ++ this.amLuong;
+                            alert("Âm lượng tăng lên: " + this.amLuong + " đơn vị ");
+                        }
+                    } else if (remote3.maDieuKhien3 === "-") {
+                            -- this.amLuong;
+                            alert("Âm lượng giảm xuống: " + this.amLuong + " đơn vị ");
+                    }
+                }
+            }
+        }
+        let maDieuKhien1 = prompt("Nhập nút điều khiển: ");
+        let maDieuKhien2 = prompt("Nhập nút chuyển kênh: ");
+        let maDieuKhien3 = prompt("Nhập nút âm lượng: ");
+        let remote = new remoteTV(maDieuKhien1,maDieuKhien2,maDieuKhien3);
+        let tiVi1 = new tiVi("Off",20,7);
+        let tiVi2 = tiVi1.batTiVi(remote);
+        let trangThai = tiVi1.getKenhDangPhat();
+        alert("Kênh đang phát: " + trangThai);
+        let tiVi3 = tiVi1.chuyenKenh(remote,remote);
+        let tiVi4 = tiVi1.tangGiamAmLuong(remote,remote);
+     </script>
+</body>
+</html>
