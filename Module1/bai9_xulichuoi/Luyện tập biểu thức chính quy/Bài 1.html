@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 1</title>
+</head>
+<body>
+     <script>
+         function kiemTraChuoi(str) {
+             let regExp = /[0-9]{2}[/]{1}[0-9]{2}[/]{1}[1-9]{4}$/;
+             if (regExp.test(str)) {
+                 alert("Ngày sinh đúng định dạng");
+             } else {
+                 alert("Ngày sinh không đúng định dạng");
+             }
+         }
+         let birthday = prompt("Nhập ngày sinh: ");
+         kiemTraChuoi(birthday);
+     </script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tên lớp học</title>
+</head>
+<body>
+     <script>
+         function tenLopHoc(str) {
+            let regExp = /^[CAP]{1}[0-9]{4}[GHIKLM]{1}$/;
+            if (regExp.test(str)) {
+                alert("Tên lớp đúng định dạng");
+            } else {
+                alert("Tên lớp không đúng định dạng");
+            }
+         }
+         let tenLop = prompt("Nhập tên lớp từ bàn phím: ");
+         tenLopHoc(tenLop);
+     </script>
+</body>
+</html>
