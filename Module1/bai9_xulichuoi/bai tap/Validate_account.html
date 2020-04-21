@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Accout</title>
+</head>
+<body>
+     <script>
+         function kiemTraAccount(str) {
+             let regExp = /^[_a-z0-9]{6,}$/;
+             if (regExp.test(str)) {
+                 alert("Account nhập đúng định dạng");
+             } else {
+                 alert("Account nhập không đúng định dạng");
+             }
+         }
+         let account = prompt("Nhập từ bàn phím: ");
+         kiemTraAccount(account);
+     </script>
+</body>
+</html>

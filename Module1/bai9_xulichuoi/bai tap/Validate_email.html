@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Email</title>
+</head>
+<body>
+     <script>
+         function kiemTraEmail(str) {
+             let regExp = /^[A-Za-z0-9]+[A-Za-z0-9]*@[A-Za-z0-9]+(\.[A-Za-z0-9]+)$/;
+             if (regExp.test(str)) {
+                 alert("Email đúng định dạng");
+             } else {
+                 alert("Email không đúng định dạng");
+             }
+         }
+         let email = prompt("Nhập email: ");
+         kiemTraEmail(email);
+     </script>
+</body>
+</html>
