@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Yêu cầu 5</title>
+</head>
+<body>
+
+     <script>
+         let arrListCustomer = ["Name: Chế Công Bách","Cmnd: 201698121","Birthday: 13/5/1997","Email: chebach97bk@gmail.com",
+             "Address: Đà Nẵng","TypeCustomer: Vip","TypeService: Vip","TypeRoom: Villa"];
+         while (true) {
+             function meNu() {
+                 let displayMainMenu = parseInt(prompt("1.AddNewCustomer: "+"\n"+"2.DisplayInformationCustomer: "+"\n"+"3.EditInformationCustomer: "+
+                     "\n"+"4.DeleteCustomer: "+"\n"+"5.Exit: "));
+                 switch (displayMainMenu) {
+                     case 1: {
+                         let themThongTin = function () {
+                             let soLuongThongTin = parseInt(prompt("Số lượng thông tin cần thêm: "));
+                             for (let i = 0; i < soLuongThongTin; i++) {
+                                 let thongTin = prompt("Nhập thông tin cần thêm: ");
+                                 arrListCustomer.push(thongTin);
+                                 return arrListCustomer;
+                             }
+                         }
+                         let result = themThongTin();
+                         alert(meNu());
+                         break;
+                     }
+                     case 2: {
+                         let hienThi = function () {
+                             let result = "";
+                             arrListCustomer.sort();
+                             for (let i = 0; i < arrListCustomer.length; i ++) {
+                                 result += (i+1) + " . " + arrListCustomer[i] + "\n";
+                             }
+                             return result;
+                         }
+                         let result1 = hienThi();
+                         alert(result1);
+                         break;
+                     }
+                     case 3: {
+                         let suaThongTin = function () {
+                             let number = parseInt(prompt("Thông tin bạn cần thay thế ở vị trí: "));
+                             for (let i = 0; i < arrListCustomer.length; i++) {
+                                 if (arrListCustomer[i] = number) {
+                                     let thongTin = prompt("Nhập thông tin thay thế: ");
+                                     arrListCustomer[i] = thongTin;
+                                     break;
+                                 }
+                             }
+                             let result = "";
+                             arrListCustomer.sort();
+                             for (let i = 0; i < arrListCustomer.length; i++) {
+                                 result += (i+1) + " . " + arrListCustomer[i] + "\n";
+                             }
+                             return result;
+                         }
+                         let result1 = suaThongTin();
+                         alert(result1);
+                         break;
+                     }
+                     case 4: {
+                         let check = false;
+                         let xoaThongTin = function () {
+                             let xoaThongTin = prompt("Nhập nội dung thông tin cần xóa");
+                             for (let i = 0; i < arrListCustomer.length; i++) {
+                                 if (arrListCustomer[i] === xoaThongTin) {
+                                     arrListCustomer.splice(i,1);
+                                     check = true;
+                                 }
+                             }
+                             if (!check) {
+                                 alert("Thông tin bạn cần xóa không có trong danh sách");
+                             }
+                             let result = "";
+                             arrListCustomer.sort();
+                             for (let i = 0; i < arrListCustomer.length; i++) {
+                                 result += (i+1) + " . " + arrListCustomer[i] + "\n";
+                             }
+                             return result;
+                         }
+                         let result1 = xoaThongTin();
+                         alert(result1);
+                         break;
+                     }
+                     default: {
+                         alert("Hãy chọn một mục");
+                     }
+                 }
+                 return meNu();
+             }
+             let d = meNu();
+             alert(d);
+         }
+
+     </script>
+</body>
+</html>

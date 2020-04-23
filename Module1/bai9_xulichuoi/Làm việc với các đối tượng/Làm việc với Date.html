@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Date</title>
+</head>
+<body>
+     <script>
+         class birthday {
+             constructor(day,month,year) {
+                 this.day = day;
+                 this.month =month;
+                 this.year = year;
+             }
+             namSong() {
+                 let date = new Date();
+                 let year = date.getFullYear() - this.year;
+                 alert("Tôi đã sống được: " + year + " năm ");
+             }
+             thangSong() {
+                 let date = new Date();
+                 let month = (date.getMonth() + 1) + 22 * 12 + 12 - this.month;
+                 alert("Tôi đã sống được: " + month + " tháng ");
+             }
+             ngaySong() {
+                 let date = new Date();
+                 let day = date.getDate() + 366 * 5 + 365 * 17 + 91 + 365 - (121 + this.day);
+                 alert("Tôi đã sống được: " + day + " ngày ");
+             }
+         }
+         let day1 = new birthday(13,5,1997);
+         let year = day1.namSong();
+         let month = day1.thangSong();
+         let day = day1.ngaySong();
+
+
+
+     </script>
+</body>
+</html>
