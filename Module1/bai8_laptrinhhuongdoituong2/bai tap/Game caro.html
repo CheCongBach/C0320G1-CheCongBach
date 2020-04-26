@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Game caro</title>
+    <style>
+        cssBoard {
+            width: 10px;
+            height: 10px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        class Board {
+            constructor(cot,hang) {
+                this.cot = cot;
+                this.hang = hang;
+                this.board = [];
+                this.innitBoard();
+            }
+            innitBoard() {
+                for (let i = 0; i < this.hang; i++) {
+                    this.board[i] = new Array();
+                    for (let j = 0; j < this.cot; j++) {
+                        this.board[i][j] = "";
+                    }
+                }
+            }
+            draw() {
+                let temp = "<table border = 1";
+                for (let i = 0; i < this.hang; i++) {
+                     temp += "<tr>";
+                    for (let j = 0; j < this.cot; j++) {
+                        temp += "<td style='height: 30px; width: 30px; text-align: center;' onclick='play("+i+","+j+")'>"
+                            + this.board[i][j] + "</td>";
+                    }
+                    temp += "</tr>";
+                }
+                temp += "</table>";
+                return temp;
+            }
+            playGame(i,j,char) {
+                this.board[i][j] = char;
+                document.body.innerHTML = "";
+                document.write(this.draw());
+                this.checkWin(char);
+            }
+            checkWin(char) {
+                let check = false;
+                for (let i = 0; i < this.hang; i++) {
+                    for (let j = 0; j < this.hang; j++) {
+                        if (this.board[i][j] === char && this.board[i][j + 1] === char && this.board[i][j + 2] === char) {
+                            check = true;
+                        }
+                        if (this.board[i][j] === char && this.board[i + 1][j] === char && this.board[i + 2][j] === char) {
+                            check = true;
+                        }
+                        if (this.board[i][j] === char && this.board[i + 1][j + 1] === char && this.board[i + 2][j + 2] === char) {
+                            check = true;
+                        }
+                        if (this.board[i][j] === char && this.board[i - 1][j - 1] === char && this.board[i - 2][j - 2] === char) {
+                            check = true;
+                        }
+                    }
+                }
+                if (check) {
+                    alert("Bạn " + char + " đã thắng")
+                    this.innitBoard();
+                    this.draw();
+                }
+            }
+        }
+        let count = 0;
+        let banCo = new Board(10,10);
+        document.write(banCo.draw());
+        function play(i, j) {
+            if (banCo.board[i][j] != "X" && banCo.board[i][j] != "O") {
+                if (count % 2 === 0) {
+                    banCo.playGame(i, j, "X");
+                } else {
+                    banCo.playGame(i, j, "O");
+                }
+                count++;
+            } else {
+                alert("Ô này đã được đánh. Yêu cầu bạn đánh ô khác.")
+            }
+        }
+    </script>
+</body>
+</html>
