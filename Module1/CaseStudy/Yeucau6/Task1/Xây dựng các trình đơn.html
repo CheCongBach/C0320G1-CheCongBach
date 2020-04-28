@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="Customer.js"></script>
+    <title>Xây dựng</title>
+</head>
+<body>
+      <script>
+          let arrListCustomer = [];
+          let regExpEmail = /\S+@\S+\.\S+/;
+          let regExpBirthday = /^\d{2}[./-]\d{2}[./-]\d{4}$/;
+          let regExpCmnd = /^[\d]{8,8}$/;
+          let regExpDiscount = /^\d+$/;
+          let regExpSoluongdikem = /^\d+$/;
+          let regExpRentDay = /^\d+$/;
+          function displayMainMenu() {
+              let choose = parseInt(prompt("1.Add New Customer: "+"\n"+"2.Display Information Customer: "+"\n"+
+                  "3.DisplayTotalPay: "+"\n"+"4.Edit Information Customer: "+"\n"+"5.Delete Customer: "));
+              switch (choose) {
+                  case 1: {
+                      addNewCustomer();
+                      break;
+                  }
+                  case 2: {
+                      displayInformationCustomer();
+                      break;
+                  }
+                  case 3: {
+                      displayTotalPay();
+                      break;
+                  }
+                  case 4: {
+                      editCustomer();
+                      break;
+                  }
+                  case 5: {
+                      deleteCustomer();
+                      break;
+                  }
+                  default: {
+                      alert("Hãy chọn một chức năng");
+                  }
+              }
+          }
+          function editCustomer() {
+              let temp = "";
+              for (let i = 0; i < arrListCustomer.length; i++) {
+                  temp += i + ".Name " + arrListCustomer[i].getName() + "\n";
+              }
+              let chooseDisplay = parseInt(prompt(temp));
+              let chooseEdit = parseInt(prompt("1.Tên: " + arrListCustomer[chooseDisplay].getName() + "\n" +
+                  "2.cmnd: " + arrListCustomer[chooseDisplay].getCmnd() + "\n" +
+                  "3.Ngày sinh: " + arrListCustomer[chooseDisplay].getBirthday() + "\n" +
+                  "4.Email: " + arrListCustomer[chooseDisplay].getEmail() + "\n" +
+                  "5.Địa chỉ: " + arrListCustomer[chooseDisplay].getAddress() + "\n" +
+                  "6.Loại khách hàng: " + arrListCustomer[chooseDisplay].gettypeCustomer() + "\n" +
+                  "7.Giam giá: " + arrListCustomer[chooseDisplay].getdiscount() + "\n" +
+                  "8.Số lượng đi kèm: " + arrListCustomer[chooseDisplay].getsoluongdikem() + "\n" +
+                  "9.Ngày thuê: " + arrListCustomer[chooseDisplay].getrentDay() + "\n" +
+                  "10.Loại dịch vụ: " + arrListCustomer[chooseDisplay].gettypeService() + "\n" +
+                  "11.Loại phòng: " + arrListCustomer[chooseDisplay].gettypeRoom()));
+              switch (chooseEdit) {
+                  case 1: {
+                      arrListCustomer[chooseDisplay].setName(prompt("Nhập tên mới thay thế: "));
+                      break;
+                  }
+                  case 2: {
+                      arrListCustomer[chooseDisplay].setCmnd(prompt("Nhập cmnd mới thay thế: "));
+                      break;
+                  }
+                  case 3: {
+                      arrListCustomer[chooseDisplay].setBirthday(prompt("Nhập ngày sinh mới thay thế: "));
+                      break;
+                  }
+                  case 4: {
+                      arrListCustomer[chooseDisplay].setEmail(prompt("Nhập email thay thế: "));
+                      break;
+                  }
+                  case 5: {
+                      arrListCustomer[chooseDisplay].setAddress(prompt("Nhập địa chỉ thay thế: "));
+                      break;
+                  }
+                  case 6: {
+                      arrListCustomer[chooseDisplay].settypeCustomer(prompt("Nhập loại khách hàng thay thế: "));
+                      break;
+                  }
+                  case 7: {
+                      arrListCustomer[chooseDisplay].setdiscount(prompt("Nhập giam giá thay thế: "));
+                      break;
+                  }
+                  case 8: {
+                      arrListCustomer[chooseDisplay].setsoluongdikem(prompt("Nhập số lượng đi kèm thay thế: "));
+                      break;
+                  }
+                  case 9: {
+                      arrListCustomer[chooseDisplay].setrentDay(prompt("Nhập số ngày thuê thay thế: "));
+                      break;
+                  }
+                  case 10: {
+                      arrListCustomer[chooseDisplay].settypeService(prompt("Nhập loại dịch vụ thay thế: "));
+                      break;
+                  }
+                  case 11: {
+                      arrListCustomer[chooseDisplay].settypeRoom(prompt("Nhập loại phòng thay thế: "));
+                      break;
+                  }
+                  default: {
+                      alert("Hãy chọn một mục");
+                  }
+              }
+              editCustomer();
+          }
+          function deleteCustomer() {
+              let temp = "";
+              for (let i = 0; i < arrListCustomer.length; i++) {
+                  temp += i + ".Name " + arrListCustomer[i].getName() + "\n";
+              }
+              let chooseDelete = parseInt(prompt(temp));
+              let check = parseInt(prompt("Bạn có thực sự muốn xóa thông tin Customer này: " + "\n 1.Yes    2.No"));
+              if (check === 1) {
+                  arrListCustomer.splice(chooseDelete,1);
+                  alert("Bạn đã xóa thành công");
+              } else {
+                  alert("Thay đổi ý định");
+              }
+              displayMainMenu();
+          }
+          function displayInformationCustomer() {
+              let temp = "";
+              for (let i = 0; i < arrListCustomer.length; i++) {
+                  temp += i + " .Name " + arrListCustomer[i].getName() + "\n";
+              }
+              let chooseDisplay = parseInt(prompt(temp));
+              alert("1.Tên: " + arrListCustomer[chooseDisplay].getName() + "\n" +
+                  "2.cmnd: " + arrListCustomer[chooseDisplay].getCmnd() + "\n" +
+                  "3.Ngày sinh: " + arrListCustomer[chooseDisplay].getBirthday() + "\n" +
+                  "4.Email: " + arrListCustomer[chooseDisplay].getEmail() + "\n" +
+                  "5.Địa chỉ: " + arrListCustomer[chooseDisplay].getAddress() + "\n" +
+                  "6.Loại khách hàng: " + arrListCustomer[chooseDisplay].gettypeCustomer() + "\n" +
+                  "7.Giam giá: " + arrListCustomer[chooseDisplay].getdiscount() + "\n" +
+                  "8.Số lượng đi kèm: " + arrListCustomer[chooseDisplay].getsoluongdikem() + "\n" +
+                  "9.Ngày thuê: " + arrListCustomer[chooseDisplay].getrentDay() + "\n" +
+                  "10.Loại dịch vụ: " + arrListCustomer[chooseDisplay].gettypeService() + "\n" +
+                  "11.Loại phòng: " + arrListCustomer[chooseDisplay].gettypeRoom());
+              displayMainMenu();
+          }
+          function displayTotalPay() {
+              let temp = "";
+              for (let i = 0; i < arrListCustomer.length; i++) {
+                  temp += i + " .Name " + arrListCustomer[i].getName() + "\n";
+              }
+              let chooseDisplayTotalPay = parseInt(prompt(temp));
+              alert("Total pay của bạn là: " + arrListCustomer[chooseDisplayTotalPay].totalPay());
+              displayMainMenu();
+          }
+          function addNewCustomer() {
+              let Customer1 = new Customer();
+              let checkValid = false;
+              let name = prompt("Nhập tên khách hàng");
+              let cmnd;
+              do {
+                  cmnd = prompt("Nhập số chứng minh");
+                  if (regExpCmnd.test(cmnd)) {
+                      checkValid = true;
+                  } else {
+                      alert("Bạn đã nhập sai định dạng vui lòng nhập lại");
+                  }
+              } while (!checkValid);
+              let birthday;
+              checkValid = false;
+              do {
+                  birthday = prompt("Nhập ngày tháng năm sinh");
+                  if (regExpBirthday.test(birthday)) {
+                      checkValid = true;
+                  } else {
+                      alert("Bạn đã nhập sai định dạng vui lòng nhập lại");
+                  }
+              } while (!checkValid);
+              let email;
+              checkValid = false;
+              do {
+                  email = prompt("Nhập địa chỉ email");
+                  if (regExpEmail.test(email)) {
+                      checkValid = true;
+                  } else {
+                      alert("Bạn đã nhập sai định dạng vui lòng nhập lại");
+                  }
+              } while (!checkValid);
+              let discount;
+              checkValid = false;
+              do {
+                  discount = parseInt(prompt("Giam giá"));
+                  if (regExpDiscount.test(discount)) {
+                      checkValid = true;
+                  } else {
+                      alert("Bạn đã nhập sai định dạng vui lòng nhập lại");
+                  }
+              } while (!checkValid);
+              let soluongdikem;
+              checkValid = false;
+              do {
+                  soluongdikem = prompt("Số lượng đi kèm");
+                  if (regExpSoluongdikem.test(soluongdikem)) {
+                      checkValid = true;
+                  } else {
+                      alert("Bạn đã nhập sai định dạng vui lòng nhập lại");
+                  }
+              } while (!checkValid);
+              let rentDay;
+              checkValid = false;
+              do {
+                  rentDay = parseInt(prompt("Số ngày thuê"));
+                  if (regExpRentDay.test(rentDay)) {
+                      checkValid = true;
+                  } else {
+                      alert("Bạn đã nhập sai định dạng vui lòng nhập lại");
+                  }
+              } while (!checkValid);
+              let address = prompt("Nhập địa chỉ");
+              let typeCustomer = prompt("Nhập loại khách hàng");
+              let typeService = prompt("Loại dich vụ");
+              let typeRoom = prompt("Loại phòng thuê");
+              Customer1.setName(name);
+              Customer1.setCmnd(cmnd);
+              Customer1.setBirthday(birthday);
+              Customer1.setEmail(email);
+              Customer1.setAddress(address);
+              Customer1.settypeCustomer(typeCustomer);
+              Customer1.setdiscount(discount);
+              Customer1.setsoluongdikem(soluongdikem);
+              Customer1.setrentDay(rentDay);
+              Customer1.settypeService(typeService);
+              Customer1.settypeRoom(typeRoom);
+              arrListCustomer.push(Customer1);
+              alert("Bạn đã thêm thành công");
+              displayMainMenu();
+          }
+          displayMainMenu();
+      </script>
+</body>
+</html>
