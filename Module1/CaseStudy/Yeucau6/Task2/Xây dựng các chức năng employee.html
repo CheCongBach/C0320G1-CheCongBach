@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="Employee.js"></script>
+    <title>Employee</title>
+</head>
+<body>
+     <script>
+         let arrListEmployee = [];
+         let regExpEmail = /\S+@\S+\.\S+/;
+         let regExpBirthday = /^\d{2}[./-]\d{2}[./-]\d{4}$/;
+         let regExpCmnd = /^[\d]{8,8}$/;
+         let regExpPhone = /^\d+$/;
+         function displayMainMenu() {
+             let choose = parseInt(prompt("1.Add New Employee: " + "\n" + "2.Display Employee Information: " + "\n" +
+             "3.Salary Of Employee: "));
+             switch (choose) {
+                 case 1: {
+                     addNewEmployee();
+                 }
+                 case 2: {
+                     displayInformationEmployee();
+                 }
+                 case 3: {
+                     salaryOfEmployee();
+                 }
+                 default: {
+                     alert("Hãy chọn một chức năng");
+                 }
+             }
+         }
+         function addNewEmployee() {
+             let check = false;
+             let employee = new Employee();
+             let name = prompt("Nhập tên Employee: ");
+             let birthday;
+             do {
+                 birthday = prompt("Nhập ngày tháng năm sinh Employee: ");
+                 if (regExpBirthday.test(birthday)) {
+                     check = true;
+                 } else {
+                     alert("Nhập sai định dạng vui lòng nhập lại");
+                 }
+             } while (!check);
+             check = false;
+             let phone;
+             do {
+                 phone = prompt("Nhập số điện thoại Employee: ");
+                 if (regExpPhone.test(phone)) {
+                     check = true;
+                 } else {
+                     alert("Bạn đã nhập sai định dạng vui lòng nhập lại");
+                 }
+             } while (!check);
+             check = false;
+             let email;
+             do {
+                 email = prompt("Nhập email Employee: ");
+                 if (regExpEmail.test(email)) {
+                     check = true;
+                 } else {
+                     alert("Bạn đã nhập sai định dạng vui lòng nhập lại");
+                 }
+             } while (!check);
+             check = false;
+             let cmnd;
+             do {
+                 cmnd = prompt("Nhập cmnd Employee: ");
+                 if (regExpCmnd.test(cmnd)) {
+                     check = true;
+                 } else {
+                     alert("Nhập sai định dạng vui lòng nhập lại");
+                 }
+             } while (!check);
+             let level = prompt("Nhập trình độ Employee: ");
+             let location = prompt("Nhập vị trí Employee: ");
+             employee.setName(name);
+             employee.setBirthday(birthday);
+             employee.setPhone(phone);
+             employee.setEmail(email);
+             employee.setCmnd(cmnd);
+             employee.setLevel(level);
+             employee.setLocation(location);
+             arrListEmployee.push(employee);
+             alert("Bạn đã thêm thành công");
+             displayMainMenu();
+         }
+         displayMainMenu();
+     </script>
+</body>
+</html>
