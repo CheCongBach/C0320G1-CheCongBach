@@ -18,12 +18,15 @@
              switch (choose) {
                  case 1: {
                      addNewEmployee();
+                     break;
                  }
                  case 2: {
                      displayInformationEmployee();
+                     break;
                  }
                  case 3: {
                      salaryOfEmployee();
+                     break;
                  }
                  default: {
                      alert("Hãy chọn một chức năng");
@@ -84,6 +87,31 @@
              employee.setLocation(location);
              arrListEmployee.push(employee);
              alert("Bạn đã thêm thành công");
+             displayMainMenu();
+         }
+         function displayInformationEmployee() {
+             let temp = "";
+             for (let i = 0; i < arrListEmployee.length; i++) {
+                 temp += i + " .Name " + arrListEmployee[i].getName() + "\n";
+             }
+             let chooseDisplay = parseInt(prompt(temp));
+             alert("1.Tên Employee: " + arrListEmployee[chooseDisplay].getName() + "\n"
+             + "2.Ngày tháng năm sinh: " + arrListEmployee[chooseDisplay].getBirthday() + "\n"
+             + "3.Số điện thoại: " + arrListEmployee[chooseDisplay].getPhone() + "\n"
+             + "4.Email: " + arrListEmployee[chooseDisplay].getEmail() + "\n"
+             + "5.Cmnd: " + arrListEmployee[chooseDisplay].getCmnd() + "\n"
+             + "6.Level: " + arrListEmployee[chooseDisplay].getLevel() + "\n"
+             + "7.Location: " + arrListEmployee[chooseDisplay].getLocation());
+             displayMainMenu();
+         }
+         function  salaryOfEmployee() {
+             let temp = "";
+             for (let i = 0; i < arrListEmployee.length; i++) {
+                 temp += i + " .Name " + arrListEmployee[i].getName() + "\n";
+             }
+             let chooseDisplay = parseInt(prompt(temp));
+             alert(" Lương của nhân viên " + arrListEmployee[chooseDisplay].getName() + " là: "
+             + arrListEmployee[chooseDisplay].getSalary());
              displayMainMenu();
          }
          displayMainMenu();
