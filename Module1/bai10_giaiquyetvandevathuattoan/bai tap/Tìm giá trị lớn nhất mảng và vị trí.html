@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gía trị lớn nhất</title>
+</head>
+<body>
+    <script>
+       function soLonNhat(array) {
+           let max = array[0];
+           let indexOfMax = 0;
+           for (let i = 0; i < array.length; i++) {
+               if (array[i] > max) {
+                   max = array[i];
+                   indexOfMax = i;
+               }
+           }
+            return alert("Số lớn nhất là " + max + " ở vị trí " + indexOfMax);
+       }
+       let array = [5,3,7,10,8,4,5,2,6];
+       let result = soLonNhat(array);
+    </script>
+</body>
+</html>

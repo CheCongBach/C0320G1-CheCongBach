@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Câu 1</title>
+</head>
+<body>
+    <script>
+        let array = ["Toyota","Hyundai","Mercedes","Daewon"];
+        let result = prompt("Nhập kí tự");
+        function timXe(array,result) {
+            for (let i =0; i < array.length; i++) {
+                if (result === array[i].charAt(0)) {
+                    alert(array[i]);
+                    break;
+                }
+            }
+            alert("Đã tìm được loại xe ứng với kí tự nhập");
+            return array;
+        }
+        let result2 = timXe(array,result);
+        alert(result2);
+    </script>
+</body>
+</html>
