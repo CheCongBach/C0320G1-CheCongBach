@@ -20,7 +20,7 @@ public class lopCyLinDer extends lopCircleBaiTap {
     }
 
     public double getVolume(double height) {
-        return super.getArea(this.radius) * this.height;
+        return super.getArea(super.getRadius()) * this.height;
     }
 
     @Override
