@@ -19,6 +19,11 @@ public class lopPoint3D extends lopPoint2D {
         this.z = z;
     }
 
+    public void setXYZ(float x,float y,float z) {
+        super.setXY(x,y);
+        this.z = z;
+    }
+
     public void getXYZ() {
         float[] array = new float[3];
         array[0] = super.getX();
