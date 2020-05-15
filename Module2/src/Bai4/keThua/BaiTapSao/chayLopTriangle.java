@@ -6,7 +6,7 @@ public class chayLopTriangle {
         System.out.println(triangle1);
         System.out.println("Chu vi của tam giác triangle1 là: " + triangle1.getPerimeter());
         System.out.println("Diện tích của tam giác triangle1 là: " + triangle1.getArea());
-        triangle1 = new lopTriangle(60,70,80,90);
+        triangle1 = new lopTriangle(60,70,80,90,"red",true);
         System.out.println("Tam giác sau triangle1 sau khi thay đổi tham số có: " + triangle1);
         System.out.println("Chu vi của tam giác triangle1 là: " + triangle1.getPerimeter());
         System.out.println("Diện tích của tam giác triangle1 là: " + triangle1.getArea());
