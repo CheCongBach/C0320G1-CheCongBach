@@ -18,16 +18,28 @@ public class lopThucThiResize {
         for (lopShape shape : shapes) {
             if (shape instanceof lopCircleReasize) {
                 lopCircleReasize circleReasize = (lopCircleReasize) shape;
+                System.out.println("Kích thước Circle trước khi tăng: ");
+                System.out.println("Circle  Area: " + circleReasize.getArea());
+                System.out.println("Circle  Perimeter: " + circleReasize.getPerimeter());
+                System.out.println("Kích thước Circle sau khi tăng: ");
                 circleReasize.resize(50);
                 System.out.println("Circle Reasize Area: " + circleReasize.getArea());
                 System.out.println("Circle Reasize Perimeter: " + circleReasize.getPerimeter());
             } else if (shape instanceof lopSquareReasize) {
                 lopSquareReasize squareReasize = (lopSquareReasize) shape;
+                System.out.println("Kích thước Square trước khi tăng: ");
+                System.out.println("Square Area: " + squareReasize.getArea());
+                System.out.println("Square Perimeter: " + squareReasize.getPerimeter());
+                System.out.println("Kích thước Square sau khi tăng: ");
                 squareReasize.resize(50);
                 System.out.println("Square Reasize Area: " + squareReasize.getArea());
                 System.out.println("Square Reasize Perimeter: " + squareReasize.getPerimeter());
             } else if (shape instanceof lopRectangleReasize) {
                 lopRectangleReasize rectangleReasize = (lopRectangleReasize) shape;
+                System.out.println("Kích thước Rectangle trước khi tăng khi tăng: ");
+                System.out.println("Rectangle Area: " + rectangleReasize.getArea());
+                System.out.println("Rectangle Perimeter: " + rectangleReasize.getPerimeter());
+                System.out.println("Kích thước Rectangle sau khi tăng: ");
                 rectangleReasize.resize(50);
                 System.out.println("Rectangle Reasize Area: " + rectangleReasize.getArea());
                 System.out.println("Rectangle Reasize Perimeter: " + rectangleReasize.getPerimeter());
