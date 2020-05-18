@@ -8,7 +8,7 @@ public class chayLopCircle {
         System.out.println(thucThi);
         thucThi = new lopCircle(3.5,"indigo",false);
         System.out.println(thucThi);
-        System.out.println("Area is: " + thucThi.getArea(3.5));
-        System.out.println("Perimeter is: " + thucThi.getPerimeter(3.5));
+        System.out.println("Area is: " + thucThi.getArea());
+        System.out.println("Perimeter is: " + thucThi.getPerimeter());
     }
 }

@@ -20,25 +20,25 @@ public class lopThucThi {
         for (lopShape shape : shapes) {
             if (shape instanceof lopCircle) {
                 lopCircle circle = (lopCircle) shape;
-                System.out.println("Circle area: " + circle.getArea(8.0));
-                System.out.println("Circle perimeter: " + circle.getPerimeter(8.0));
+                System.out.println("Circle area: " + circle.getArea());
+                System.out.println("Circle perimeter: " + circle.getPerimeter());
                 System.out.println("Circle information: " + circle.toString());
             } else if (shape instanceof lopShapeColorable) {
                 lopShapeColorable shapeColorable = (lopShapeColorable) shape;
-                System.out.println("shapeColorable area: " + shapeColorable.getArea(8.0, 8.0));
-                System.out.println("shapeColorable perimeter: " + shapeColorable.getPerimeter(8.0, 8.0));
+                System.out.println("shapeColorable area: " + shapeColorable.getArea());
+                System.out.println("shapeColorable perimeter: " + shapeColorable.getPerimeter());
                 System.out.println("shapeColorable information: " + shapeColorable.toString());
                 shapeColorable.howToColor();
             } else if (shape instanceof lopSquaRe) {
                 lopSquaRe squaRe = (lopSquaRe) shape;
-                System.out.println("Square area: " + squaRe.getArea(8.0, 8.0));
-                System.out.println("Square perimeter: " + squaRe.getPerimeter(8.0, 8.0));
+                System.out.println("Square area: " + squaRe.getArea());
+                System.out.println("Square perimeter: " + squaRe.getPerimeter());
                 System.out.println("Square information" + squaRe.toString());
                 System.out.println();
             } else if (shape instanceof lopRecTanGle) {
                 lopRecTanGle recTanGle = (lopRecTanGle) shape;
-                System.out.println("Rectangle area: " + recTanGle.getArea(7.0, 8.0));
-                System.out.println("Rectangle perimeter: " + recTanGle.getPerimeter(7.0, 8.0));
+                System.out.println("Rectangle area: " + recTanGle.getArea());
+                System.out.println("Rectangle perimeter: " + recTanGle.getPerimeter());
                 System.out.println("Rectangle information: " + recTanGle.toString());
             }
             System.out.println();

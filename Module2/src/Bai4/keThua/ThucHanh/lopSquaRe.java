@@ -21,15 +21,15 @@ public class lopSquaRe extends lopRecTanGle {
         setWidth(side);
     }
 
-    @Override
-    public void setWidth(double side) {
-        setSide(side);
-    }
-
-    @Override
-    public void setLenght(double side) {
-        setSide(side);
-    }
+//    @Override
+//    public void setWidth(double side) {
+//        setSide(side);
+//    }
+//
+//    @Override
+//    public void setLenght(double side) {
+//        setSide(side);
+//    }
 
     @Override
     public String toString() {

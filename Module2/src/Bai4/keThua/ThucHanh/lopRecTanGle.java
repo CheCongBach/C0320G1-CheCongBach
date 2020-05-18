@@ -34,11 +34,11 @@ public class lopRecTanGle extends lopShape {
         this.lenght = lenght;
     }
 
-    public double getArea(double width,double lenght) {
+    public double getArea() {
         return this.width * this.lenght;
     }
 
-    public double getPerimeter(double width,double lenght) {
+    public double getPerimeter() {
         return 2 * (this.width + this.lenght);
     }
 

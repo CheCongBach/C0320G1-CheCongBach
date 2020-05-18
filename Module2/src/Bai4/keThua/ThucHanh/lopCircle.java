@@ -23,11 +23,11 @@ public class lopCircle extends lopShape {
         this.radius = radius;
     }
 
-    public double getArea(double radius) {
+    public double getArea() {
         return this.radius * this.radius * Math.PI;
     }
 
-    public double getPerimeter(double radius) {
+    public double getPerimeter() {
         return 2 * this.radius * Math.PI;
     }
 
