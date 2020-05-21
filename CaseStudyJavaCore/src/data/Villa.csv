@@ -1,0 +1,3 @@
+serviceName,area,rentalFee,maxGuest,rentalType,roomStandard,villaDescriptionnumberOfFloors,poolArea
+Pink,100.0,50.0,12,Vip,Vip,Vip,6,30.0
+Black,120.0,60.0,15,Vip,Vip,Vip,9,40.0
