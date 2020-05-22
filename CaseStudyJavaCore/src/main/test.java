@@ -1,10 +1,10 @@
 package main;
 
-import controllers.mainControllers;
+import controllers.MainControllers;
 
 public class test {
     public static void main(String[] args) {
-        mainControllers controllers = new mainControllers();
+        MainControllers controllers = new MainControllers();
         controllers.displayMainMenu();
     }
 }

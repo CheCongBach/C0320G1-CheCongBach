@@ -6,10 +6,11 @@ import commons.VillaCSV;
 import models.House;
 import models.Room;
 import models.Villa;
-import java.util.ArrayList;
-import java.util.Scanner;
+import validation.checkInput;
 
-public class mainControllers {
+import java.util.*;
+
+public class MainControllers {
     Scanner scanner = new Scanner(System.in);
     public void displayMainMenu() {
         String choice;
@@ -112,40 +113,19 @@ public class mainControllers {
         ArrayList<Room> roomArrayList = new ArrayList<>();
         roomArrayList = RoomCSV.getFileCSVtoListRoom();
         Room room = new Room();
+        checkInput checkInput = new checkInput();
+        System.out.println("Enter id: ");
+        room.setId(scanner.nextLine());
         System.out.println("Enter Service Name: ");
-        room.setServiceName(scanner.nextLine());
+        room.setServiceName(checkInput.checkServiceName());
         System.out.println("Enter Area: ");
-        do {
-            try {
-                double area = Double.parseDouble(scanner.nextLine());
-                room.setArea(area);
-                break;
-            } catch (NumberFormatException e) {
-                System.out.println("Please enter again: ");
-            }
-        } while (true);
+        room.setArea(checkInput.checkAreaUseOrAreaPool());
         System.out.println("Enter RentalFee: ");
-        do {
-            try {
-                double rentalFee = Double.parseDouble(scanner.nextLine());
-                room.setRentalFee(rentalFee);
-                break;
-            } catch (NumberFormatException e) {
-                System.out.println("Please enter again: ");
-            }
-        } while (true);
+        room.setRentalFee(checkInput.checkRentalFee());
         System.out.println("Enter Max Guest: ");
-        do {
-            try {
-              int maxGuest = Integer.parseInt(scanner.nextLine());
-              room.setMaxGuest(maxGuest);
-              break;
-            } catch (NumberFormatException e) {
-                System.out.println("Please enter again: ");
-            }
-        } while (true);
+        room.setMaxGuest(checkInput.checkMaxGuest());
         System.out.println("Enter Rental Type: ");
-        room.setRentalFee(Double.parseDouble(scanner.nextLine()));
+        room.setRentalType(checkInput.checkRentalTypeOrRoomStandard(scanner.nextLine()));
         System.out.println("Enter Room External Services: ");
         room.setExternalServices(scanner.nextLine());
         roomArrayList.add(room);
@@ -160,54 +140,25 @@ public class mainControllers {
         ArrayList<House> houseArrayList = new ArrayList<>();
         houseArrayList = HouseCSV.getFileCSVtoListHouse();
         House house = new House();
+        checkInput checkInput = new checkInput();
+        System.out.println("Enter id: ");
+        house.setId(scanner.nextLine());
         System.out.println("Enter Service Name: ");
-        house.setServiceName(scanner.nextLine());
+        house.setServiceName(checkInput.checkServiceName());
         System.out.println("Enter Area: ");
-        do {
-            try {
-                double area = Double.parseDouble(scanner.nextLine());
-                house.setArea(area);
-                break;
-            } catch (NumberFormatException e) {
-                System.out.println("Please enter again: ");
-            }
-        } while (true);
+        house.setArea(checkInput.checkAreaUseOrAreaPool());
         System.out.println("Enter RentalFee: ");
-        do {
-            try {
-                double rentalFee = Double.parseDouble(scanner.nextLine());
-                house.setRentalFee(rentalFee);
-                break;
-            } catch (NumberFormatException e) {
-                System.out.println("Please enter again: ");
-            }
-        } while (true);
+        house.setRentalFee(checkInput.checkRentalFee());
         System.out.println("Enter Max Guest: ");
-        do {
-            try {
-                int maxGuest = Integer.parseInt(scanner.nextLine());
-                house.setMaxGuest(maxGuest);
-                break;
-            } catch (NumberFormatException e) {
-                System.out.println("Please enter again: ");
-            }
-        } while (true);
+        house.setMaxGuest(checkInput.checkMaxGuest());
         System.out.println("Enter Rental Type: ");
-        house.setRentalType(scanner.nextLine());
+        house.setRentalType(checkInput.checkRentalTypeOrRoomStandard(scanner.nextLine()));
         System.out.println("Enter Room Standard: ");
-        house.setRoomStandard(scanner.nextLine());
+        house.setRoomStandard(checkInput.checkRentalTypeOrRoomStandard(scanner.nextLine()));
         System.out.println("Enter House Description");
         house.setHouseDescription(scanner.nextLine());
         System.out.println("Enter Number Of Floors");
-        do {
-            try {
-                int numberOfFloors = Integer.parseInt(scanner.nextLine());
-                house.setNumberOfFloors(numberOfFloors);
-                break;
-            } catch (NumberFormatException e) {
-                System.out.println("Please enter again: ");
-            }
-        } while (true);
+        house.setNumberOfFloors(checkInput.checkNumberOfFloors());
         houseArrayList.add(house);
         HouseCSV.writerHouseToFileCSV(houseArrayList);
         System.out.println("Add new House complete!!! Enter to continue...");
@@ -220,64 +171,27 @@ public class mainControllers {
         ArrayList<Villa> villaArrayList = new ArrayList<>();
         villaArrayList = VillaCSV.getFileCSVtoListVilla();
         Villa villa = new Villa();
+        checkInput checkInput = new checkInput();
+        System.out.println("Enter id: ");
+        villa.setId(scanner.nextLine());
         System.out.println("Enter Service Name: ");
-        villa.setServiceName(scanner.nextLine());
+        villa.setServiceName(checkInput.checkServiceName());
         System.out.println("Enter Area: ");
-        do {
-            try {
-                 double area = Double.parseDouble(scanner.nextLine());
-                 villa.setArea(area);
-                 break;
-            } catch (NumberFormatException e) {
-                System.out.println("Please enter again: ");
-            }
-        } while (true);
+        villa.setArea(checkInput.checkAreaUseOrAreaPool());
         System.out.println("Enter RentalFee: ");
-        do {
-            try {
-                double rentalFee = Double.parseDouble(scanner.nextLine());
-                villa.setRentalFee(rentalFee);
-                break;
-            } catch (NumberFormatException e) {
-                System.out.println("Please enter again: ");
-            }
-        } while (true);
+        villa.setRentalFee(checkInput.checkRentalFee());
         System.out.println("Enter Max Guest: ");
-        do {
-            try {
-                int maxGuest = Integer.parseInt(scanner.nextLine());
-                villa.setMaxGuest(maxGuest);
-                break;
-            } catch (NumberFormatException e) {
-                System.out.println("Please enter again: ");
-            }
-        } while (true);
+        villa.setMaxGuest(checkInput.checkMaxGuest());
         System.out.println("Enter Rental Type: ");
-        villa.setRentalType(scanner.nextLine());
+        villa.setRentalType(checkInput.checkRentalTypeOrRoomStandard(scanner.nextLine()));
         System.out.println("Enter Room Standard: ");
-        villa.setRoomStandard(scanner.nextLine());
+        villa.setRoomStandard(checkInput.checkRentalTypeOrRoomStandard(scanner.nextLine()));
         System.out.println("Enter Villa Description: ");
         villa.setVillaDescription(scanner.nextLine());
         System.out.println("Enter Number Of Floors: ");
-        do {
-            try {
-                int numberOfFloors = Integer.parseInt(scanner.nextLine());
-                villa.setNumberOfFloors(numberOfFloors);
-                break;
-            } catch (NumberFormatException e) {
-                System.out.println("Please enter again: ");
-            }
-        } while (true);
+        villa.setNumberOfFloors(checkInput.checkNumberOfFloors());
         System.out.println("Enter Pool Area: ");
-        do {
-            try {
-                double poolArea = Double.parseDouble(scanner.nextLine());
-                villa.setPoolArea(poolArea);
-                break;
-            } catch (NumberFormatException e) {
-                System.out.println("Please enter again: ");
-            }
-        } while (true);
+        villa.setPoolArea(checkInput.checkAreaUseOrAreaPool());
         villaArrayList.add(villa);
         VillaCSV.writerVillaToFileCSV(villaArrayList);
         System.out.println("Add new Villa complete!!! Enter to continue...");
@@ -331,22 +245,55 @@ public class mainControllers {
     }
 
     private void showAllNameRoomNotDuplicate() {
-
+        List<Room> rooms = RoomCSV.getFileCSVtoListRoom();
+        Set<Room> roomSet = new HashSet<>();
+        for (Room room : rooms) {
+            roomSet.add(room);
+        }
+        for (Room room : roomSet) {
+            System.out.println("---------------------------------");
+            System.out.println("Information Room not duplicate: " + room.showInfo());
+        }
+        System.out.println("Enter to continue.....");
+        scanner.nextLine();
+        showServices();
     }
 
     private void showAllNameHouseNotDuplicate() {
-
+        List<House> houses = HouseCSV.getFileCSVtoListHouse();
+        Set<House> houseSet = new HashSet<>();
+        for (House house : houses) {
+            houseSet.add(house);
+        }
+        for (House house : houseSet) {
+            System.out.println("---------------------------------");
+            System.out.println("Information House not duplicate: " + house.showInfo());
+        }
+        System.out.println("Enter to continue.....");
+        scanner.nextLine();
+        showServices();
     }
 
     private void showAllNameVillaNotDuplicate() {
-
+        List<Villa> villas = VillaCSV.getFileCSVtoListVilla();
+        Set<Villa> villaSet = new HashSet<>();
+        for (Villa villa : villas) {
+            villaSet.add(villa);
+        }
+        for (Villa villa : villaSet) {
+            System.out.println("---------------------------------");
+            System.out.println("Information Villa not duplicate: " + villa.showInfo());
+        }
+        System.out.println("Enter to continue.....");
+        scanner.nextLine();
+        showServices();
     }
 
     private void showAllRoom() {
-        ArrayList<Room> roomArrayList = RoomCSV.getFileCSVtoListRoom();
+        List<Room> roomArrayList = RoomCSV.getFileCSVtoListRoom();
         for (Room room : roomArrayList) {
             System.out.println("---------------------------------");
-            System.out.println("Information Villa:" + room.showInfo());
+            System.out.println("Information Villa:\n" + room.showInfo());
             System.out.println("---------------------------------");
         }
         System.out.println("Enter to continue.....");
@@ -355,10 +302,10 @@ public class mainControllers {
     }
 
     private void showAllHouse() {
-        ArrayList<House> houseArrayList = HouseCSV.getFileCSVtoListHouse();
+        List<House> houseArrayList = HouseCSV.getFileCSVtoListHouse();
         for (House house : houseArrayList) {
             System.out.println("---------------------------------");
-            System.out.println("Information Villa:" + house.showInfo());
+            System.out.println("Information Villa:\n" + house.showInfo());
             System.out.println("---------------------------------");
         }
         System.out.println("Enter to continue.....");
@@ -367,10 +314,10 @@ public class mainControllers {
     }
 
     private void showAllVilla() {
-        ArrayList<Villa> villaArrayList = VillaCSV.getFileCSVtoListVilla();
+        List<Villa> villaArrayList = VillaCSV.getFileCSVtoListVilla();
         for (Villa villa : villaArrayList) {
             System.out.println("---------------------------------");
-            System.out.println("Information Villa:" + villa.showInfo());
+            System.out.println("Information Villa:\n" + villa.showInfo());
             System.out.println("---------------------------------");
         }
         System.out.println("Enter to continue.....");

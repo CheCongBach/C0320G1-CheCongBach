@@ -10,12 +10,14 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Set;
+import java.util.TreeSet;
 
 public class VillaCSV {
     private static final String COMMA_DELIMITER = ",";
     private static final String NEW_LIFE_SEPARATOR = "\n";
     private static final String fileNameVilla = "src/data/Villa.csv";
-    private static final String FILE_HEADER_VILLA = "serviceName,area,rentalFee,maxGuest,rentalType,roomStandard,villaDescription" +
+    private static final String FILE_HEADER_VILLA = "id,serviceName,area,rentalFee,maxGuest,rentalType,roomStandard,villaDescription," +
             "numberOfFloors,poolArea";
     public static void writerVillaToFileCSV(ArrayList<Villa> villaArrayList) {
         FileWriter fileWriter = null;
@@ -24,6 +26,8 @@ public class VillaCSV {
             fileWriter.append(FILE_HEADER_VILLA);
             fileWriter.append(NEW_LIFE_SEPARATOR);
             for (Villa villa : villaArrayList) {
+                fileWriter.append(villa.getId());
+                fileWriter.append(COMMA_DELIMITER);
                 fileWriter.append(villa.getServiceName());
                 fileWriter.append(COMMA_DELIMITER);
                 fileWriter.append(String.valueOf(villa.getArea()));
@@ -42,8 +46,8 @@ public class VillaCSV {
                 fileWriter.append(COMMA_DELIMITER);
                 fileWriter.append(String.valueOf(villa.getPoolArea()));
                 fileWriter.append(NEW_LIFE_SEPARATOR);
-                System.out.println("Success add");
             }
+            System.out.println("Success add");
         } catch (Exception ex) {
             System.out.println("Error in CSV file writer !!!");
         } finally {
@@ -72,19 +76,20 @@ public class VillaCSV {
 
             while ((line = br.readLine()) != null) {
                 String[] splitData = line.split(",");
-                if (splitData[0].equals("serviceName")) {
+                if (splitData[0].equals("id")) {
                     continue;
                 }
                 Villa villa = new Villa();
-                villa.setServiceName(splitData[0]);
-                villa.setArea(Double.parseDouble(splitData[1]));
-                villa.setRentalFee(Double.parseDouble(splitData[2]));
-                villa.setMaxGuest(Integer.parseInt(splitData[3]));
-                villa.setRentalType(splitData[4]);
-                villa.setRoomStandard(splitData[5]);
-                villa.setVillaDescription(splitData[6]);
-                villa.setNumberOfFloors(Integer.parseInt(splitData[7]));
-                villa.setPoolArea(Double.parseDouble(splitData[8]));
+                villa.setId(splitData[0]);
+                villa.setServiceName(splitData[1]);
+                villa.setArea(Double.parseDouble(splitData[2]));
+                villa.setRentalFee(Double.parseDouble(splitData[3]));
+                villa.setMaxGuest(Integer.parseInt(splitData[4]));
+                villa.setRentalType(splitData[5]);
+                villa.setRoomStandard(splitData[6]);
+                villa.setVillaDescription(splitData[7]);
+                villa.setNumberOfFloors(Integer.parseInt(splitData[8]));
+                villa.setPoolArea(Double.parseDouble(splitData[9]));
                 villaArrayList.add(villa);
             }
         } catch (Exception e) {

@@ -15,7 +15,7 @@ public class RoomCSV {
     private static final String COMMA_DELIMITER = ",";
     private static final String NEW_LIFE_SEPARATOR = "\n";
     private static final String fileNameRoom = "src/data/Room.csv";
-    private static final String FILE_HEADER_ROOM = "serviceName,area,rentalFee,maxGuest,rentalType,externalServices";
+    private static final String FILE_HEADER_ROOM = "id,serviceName,area,rentalFee,maxGuest,rentalType,externalServices";
 
     public static void writerRoomToFileCSV (ArrayList<Room> roomArrayList) {
         FileWriter fileWriter = null;
@@ -24,6 +24,8 @@ public class RoomCSV {
             fileWriter.append(FILE_HEADER_ROOM);
             fileWriter.append(NEW_LIFE_SEPARATOR);
             for (Room room : roomArrayList) {
+                fileWriter.append(room.getId());
+                fileWriter.append(COMMA_DELIMITER);
                 fileWriter.append(room.getServiceName());
                 fileWriter.append(COMMA_DELIMITER);
                 fileWriter.append(String.valueOf(room.getArea()));
@@ -36,8 +38,8 @@ public class RoomCSV {
                 fileWriter.append(COMMA_DELIMITER);
                 fileWriter.append(room.getExternalServices());
                 fileWriter.append(NEW_LIFE_SEPARATOR);
-                System.out.println("Success add");
             }
+            System.out.println("Success add");
         } catch (Exception ex) {
             System.out.println("Error in CSV file writer !!!");
         } finally {
@@ -66,16 +68,17 @@ public class RoomCSV {
 
             while ((line = br.readLine()) != null) {
                 String[] splitData = line.split(",");
-                if (splitData[0].equals("serviceName")) {
+                if (splitData[0].equals("id")) {
                     continue;
                 }
                 Room room = new Room();
-                room.setServiceName(splitData[0]);
-                room.setArea(Double.parseDouble(splitData[1]));
-                room.setRentalFee(Double.parseDouble(splitData[2]));
-                room.setMaxGuest(Integer.parseInt(splitData[3]));
-                room.setRentalType(splitData[4]);
-                room.setExternalServices(splitData[5]);
+                room.setId(splitData[0]);
+                room.setServiceName(splitData[1]);
+                room.setArea(Double.parseDouble(splitData[2]));
+                room.setRentalFee(Double.parseDouble(splitData[3]));
+                room.setMaxGuest(Integer.parseInt(splitData[4]));
+                room.setRentalType(splitData[5]);
+                room.setExternalServices(splitData[6]);
                 roomArrayList.add(room);
             }
         } catch (Exception e) {
