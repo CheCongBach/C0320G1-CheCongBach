@@ -73,7 +73,7 @@ public class checkInput {
             }
         } while (true);
     }
-    public String checkServiceName() {
+    public String checkServiceNameOrCheckRentalTypeOrRoomStandard() {
         String temp = "";
         Scanner scanner = new Scanner(System.in);
         String serviceName = scanner.nextLine();
@@ -86,20 +86,6 @@ public class checkInput {
                 temp += String.valueOf(serviceName.charAt(i)).toUpperCase();
             } else {
                 temp += serviceName.charAt(i);
-            }
-        }
-        return temp;
-    }
-    public String checkRentalTypeOrRoomStandard(String str) {
-        str = str.trim().toLowerCase();
-        String temp = "" + String.valueOf(str.charAt(0)).toUpperCase();
-        for (int j = 1; j < str.length(); j++) {
-            if (str.charAt(j) == ' ' && str.charAt(j - 1) == ' ') {
-                continue;
-            } else if (str.charAt(j - 1) == ' ') {
-                temp += String.valueOf(str.charAt(j)).toUpperCase();
-            } else {
-                temp += str.charAt(j);
             }
         }
         return temp;

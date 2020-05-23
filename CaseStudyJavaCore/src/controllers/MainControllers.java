@@ -12,6 +12,10 @@ import java.util.*;
 
 public class MainControllers {
     Scanner scanner = new Scanner(System.in);
+    checkInput checkInput = new checkInput();
+    Villa villa = new Villa();
+    House house = new House();
+    Room room = new Room();
     public void displayMainMenu() {
         String choice;
         System.out.println("1.Add New Services: " + "\n" + "2.Show Services: " + "\n" + "3.Add New Customer: " + "\n" +
@@ -114,12 +118,10 @@ public class MainControllers {
         scanner = new Scanner(System.in);
         ArrayList<Room> roomArrayList = new ArrayList<>();
         roomArrayList = RoomCSV.getFileCSVtoListRoom();
-        Room room = new Room();
-        checkInput checkInput = new checkInput();
         System.out.println("Enter id: ");
         room.setId(scanner.nextLine());
         System.out.println("Enter Service Name: ");
-        room.setServiceName(checkInput.checkServiceName());
+        room.setServiceName(checkInput.checkServiceNameOrCheckRentalTypeOrRoomStandard());
         System.out.println("Enter Area: ");
         room.setArea(checkInput.checkAreaUseOrAreaPool());
         System.out.println("Enter RentalFee: ");
@@ -127,7 +129,7 @@ public class MainControllers {
         System.out.println("Enter Max Guest: ");
         room.setMaxGuest(checkInput.checkMaxGuest());
         System.out.println("Enter Rental Type: ");
-        room.setRentalType(checkInput.checkRentalTypeOrRoomStandard(scanner.nextLine()));
+        room.setRentalType(checkInput.checkServiceNameOrCheckRentalTypeOrRoomStandard());
         System.out.println("Enter Room External Services: ");
         room.setExternalServices(scanner.nextLine());
         roomArrayList.add(room);
@@ -141,12 +143,10 @@ public class MainControllers {
         scanner = new Scanner(System.in);
         ArrayList<House> houseArrayList = new ArrayList<>();
         houseArrayList = HouseCSV.getFileCSVtoListHouse();
-        House house = new House();
-        checkInput checkInput = new checkInput();
         System.out.println("Enter id: ");
         house.setId(scanner.nextLine());
         System.out.println("Enter Service Name: ");
-        house.setServiceName(checkInput.checkServiceName());
+        house.setServiceName(checkInput.checkServiceNameOrCheckRentalTypeOrRoomStandard());
         System.out.println("Enter Area: ");
         house.setArea(checkInput.checkAreaUseOrAreaPool());
         System.out.println("Enter RentalFee: ");
@@ -154,9 +154,9 @@ public class MainControllers {
         System.out.println("Enter Max Guest: ");
         house.setMaxGuest(checkInput.checkMaxGuest());
         System.out.println("Enter Rental Type: ");
-        house.setRentalType(checkInput.checkRentalTypeOrRoomStandard(scanner.nextLine()));
+        house.setRentalType(checkInput.checkServiceNameOrCheckRentalTypeOrRoomStandard());
         System.out.println("Enter Room Standard: ");
-        house.setRoomStandard(checkInput.checkRentalTypeOrRoomStandard(scanner.nextLine()));
+        house.setRoomStandard(checkInput.checkServiceNameOrCheckRentalTypeOrRoomStandard());
         System.out.println("Enter House Description");
         house.setHouseDescription(scanner.nextLine());
         System.out.println("Enter Number Of Floors");
@@ -172,12 +172,10 @@ public class MainControllers {
         scanner = new Scanner(System.in);
         ArrayList<Villa> villaArrayList = new ArrayList<>();
         villaArrayList = VillaCSV.getFileCSVtoListVilla();
-        Villa villa = new Villa();
-        checkInput checkInput = new checkInput();
         System.out.println("Enter id: ");
         villa.setId(scanner.nextLine());
         System.out.println("Enter Service Name: ");
-        villa.setServiceName(checkInput.checkServiceName());
+        villa.setServiceName(checkInput.checkServiceNameOrCheckRentalTypeOrRoomStandard());
         System.out.println("Enter Area: ");
         villa.setArea(checkInput.checkAreaUseOrAreaPool());
         System.out.println("Enter RentalFee: ");
@@ -185,9 +183,9 @@ public class MainControllers {
         System.out.println("Enter Max Guest: ");
         villa.setMaxGuest(checkInput.checkMaxGuest());
         System.out.println("Enter Rental Type: ");
-        villa.setRentalType(checkInput.checkRentalTypeOrRoomStandard(scanner.nextLine()));
+        villa.setRentalType(checkInput.checkServiceNameOrCheckRentalTypeOrRoomStandard());
         System.out.println("Enter Room Standard: ");
-        villa.setRoomStandard(checkInput.checkRentalTypeOrRoomStandard(scanner.nextLine()));
+        villa.setRoomStandard(checkInput.checkServiceNameOrCheckRentalTypeOrRoomStandard());
         System.out.println("Enter Villa Description: ");
         villa.setVillaDescription(scanner.nextLine());
         System.out.println("Enter Number Of Floors: ");
