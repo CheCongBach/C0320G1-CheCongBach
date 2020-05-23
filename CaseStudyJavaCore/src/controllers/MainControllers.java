@@ -70,6 +70,8 @@ public class MainControllers {
     }
 
     private void addNewCustomer() {
+        scanner = new Scanner(System.in);
+
 
     }
 

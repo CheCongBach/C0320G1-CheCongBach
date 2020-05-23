@@ -3,3 +3,4 @@ id,serviceName,area,rentalFee,maxGuest,rentalType,roomStandard,villaDescription,
 2,Vip,12.0,34.0,34,Vip,Vip,Vip,12,30.0
 3,Villa,100.0,30.0,34,34,Vip,Vip,12,30.0
 1,Villa,100.0,50.0,20,50,Vip,Vip,12,30.0
+12,Qe Rr R,40.0,12.0,12,12,12,12,12,34.0

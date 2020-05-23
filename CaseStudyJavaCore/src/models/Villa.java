@@ -37,7 +37,7 @@ public class Villa extends Services {
 
     @Override
     public int hashCode() {
-        return Objects.hash(roomStandard, villaDescription, numberOfFloors, poolArea);
+        return Objects.hash(super.hashCode(), roomStandard, villaDescription, numberOfFloors, poolArea);
     }
 
     public String getRoomStandard() {
