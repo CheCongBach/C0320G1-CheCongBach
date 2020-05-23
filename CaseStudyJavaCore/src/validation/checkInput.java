@@ -1,7 +1,14 @@
 package validation;
 
+import com.sun.scenario.effect.impl.sw.java.JSWColorAdjustPeer;
+import exception.BirthdayException;
+import exception.EmailException;
+import exception.IdCardException;
+import exception.NameException;
 import models.Villa;
 
+import java.time.LocalDate;
+import java.time.Period;
 import java.util.Scanner;
 
 public class checkInput {
@@ -22,6 +29,7 @@ public class checkInput {
             }
         } while (true);
     }
+
     public double checkRentalFee() {
         do {
             try {
@@ -39,6 +47,7 @@ public class checkInput {
             }
         } while (true);
     }
+
     public int checkMaxGuest() {
         do {
             try {
@@ -56,6 +65,7 @@ public class checkInput {
             }
         } while (true);
     }
+
     public int checkNumberOfFloors() {
         do {
             try {
@@ -73,6 +83,7 @@ public class checkInput {
             }
         } while (true);
     }
+
     public String checkServiceNameOrCheckRentalTypeOrRoomStandard() {
         String temp = "";
         Scanner scanner = new Scanner(System.in);
@@ -89,5 +100,52 @@ public class checkInput {
             }
         }
         return temp;
+    }
+
+    public String checkNameCustomer() {
+        while (true) {
+            try {
+                Scanner scanner = new Scanner(System.in);
+                String nameCustomer = NameException.nameException(scanner.nextLine());
+                return nameCustomer;
+            } catch (Exception n) {
+                System.out.println(n);
+            }
+        }
+    }
+
+    public String checkEmailCustomer() {
+        while (true) {
+            try {
+                Scanner scanner = new Scanner(System.in);
+                String emailCustomer = EmailException.emailException(scanner.nextLine());
+                return emailCustomer;
+            } catch (Exception e) {
+                System.out.println(e);
+            }
+        }
+    }
+
+    public String checkBirthdayCustomer() {
+        while (true) {
+            try {
+                Scanner scanner = new Scanner(System.in);
+                String birthdayCustomer = BirthdayException.birthdayException(scanner.nextLine());
+                return birthdayCustomer;
+            } catch (Exception b) {
+                System.out.println(b);
+            }
+        }
+    }
+
+    public String checkIdCardCustomer() {
+        while (true) {
+            try {
+                Scanner scanner = new Scanner(System.in);
+                String idCardCustomer = IdCardException.idCardException(scanner.nextLine());
+            } catch (Exception i) {
+                System.out.println(i);
+            }
+        }
     }
 }
