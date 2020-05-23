@@ -1,7 +1,6 @@
 package commons;
 
 import models.Customer;
-import models.Villa;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -16,7 +15,7 @@ public class CustomerCSV {
     private static final String COMMA_DELIMITER = ",";
     private static final String NEW_LIFE_SEPARATOR = "\n";
     private static final String fileNameCustomer = "src/data/Villa.csv";
-    private static final String FILE_HEADER_CUSTOMER = "nameCustomer,birthday,gender,cmnd,phoneNumber,email,typeCustomer,address,service";
+    private static final String FILE_HEADER_CUSTOMER = "nameCustomer,idCard,birthday,gender,cmnd,phoneNumber,email,typeCustomer,address,service";
 
     public static void writerCustomerToFileCSV(ArrayList<Customer> customerArrayList) {
         FileWriter fileWriter = null;
@@ -26,6 +25,8 @@ public class CustomerCSV {
             fileWriter.append(NEW_LIFE_SEPARATOR);
             for (Customer customer : customerArrayList) {
                 fileWriter.append(customer.getNameCustomer());
+                fileWriter.append(COMMA_DELIMITER);
+                fileWriter.append(customer.getIdCard());
                 fileWriter.append(COMMA_DELIMITER);
                 fileWriter.append(customer.getBirthday());
                 fileWriter.append(COMMA_DELIMITER);
@@ -76,13 +77,14 @@ public class CustomerCSV {
                 }
                 Customer customer = new Customer();
                 customer.setNameCustomer(splitData[0]);
-                customer.setBirthday(splitData[1]);
-                customer.setGender(splitData[2]);
-                customer.setCmnd(splitData[3]);
-                customer.setPhoneNumber(splitData[4]);
-                customer.setEmail(splitData[5]);
-                customer.setTypeCustomer(splitData[6]);
-                customer.setAddress(splitData[7]);
+                customer.setIdCard(splitData[1]);
+                customer.setBirthday(splitData[2]);
+                customer.setGender(splitData[3]);
+                customer.setCmnd(splitData[4]);
+                customer.setPhoneNumber(splitData[5]);
+                customer.setEmail(splitData[6]);
+                customer.setTypeCustomer(splitData[7]);
+                customer.setAddress(splitData[8]);
                 customerArrayList.add(customer);
             }
         } catch (Exception e) {

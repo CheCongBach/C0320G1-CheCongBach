@@ -1,11 +1,14 @@
 package controllers;
 
+import commons.CustomerCSV;
 import commons.HouseCSV;
 import commons.RoomCSV;
 import commons.VillaCSV;
+import models.Customer;
 import models.House;
 import models.Room;
 import models.Villa;
+import sort.NameCustomerComparator;
 import validation.checkInput;
 
 import java.util.*;
@@ -16,6 +19,7 @@ public class MainControllers {
     Villa villa = new Villa();
     House house = new House();
     Room room = new Room();
+    Customer customer = new Customer();
     public void displayMainMenu() {
         String choice;
         System.out.println("1.Add New Services: " + "\n" + "2.Show Services: " + "\n" + "3.Add New Customer: " + "\n" +
@@ -70,13 +74,43 @@ public class MainControllers {
     }
 
     private void showInformationCustomers() {
-
+        ArrayList<Customer> customers = CustomerCSV.getFileCSVtoListCustomer();
+        Collections.sort(customers,new NameCustomerComparator());
+        for (Customer customer : customers) {
+            System.out.println("---------------------------------");
+            System.out.println("Customer information is sorted");
+            System.out.println(customer.showInfo());
+        }
+        System.out.println("Enter to continue.....");
+        scanner.nextLine();
+        displayMainMenu();
     }
 
     private void addNewCustomer() {
         scanner = new Scanner(System.in);
-
-
+        ArrayList<Customer> customerArrayList = new ArrayList<>();
+        customerArrayList = CustomerCSV.getFileCSVtoListCustomer();
+        System.out.println("Enter Name Customer: ");
+        customer.setNameCustomer(checkInput.checkNameCustomer());
+        System.out.println("Enter Id Card Customer: ");
+        customer.setIdCard(checkInput.checkIdCardCustomer());
+        System.out.println("Enter Birthday Customer: ");
+        customer.setBirthday(checkInput.checkBirthdayCustomer());
+        System.out.println("Enter Gender Customer: ");
+        customer.setGender(scanner.nextLine());
+        System.out.println("Enter Phone Number Customer: ");
+        customer.setPhoneNumber(checkInput.checkPhoneNumberCustomer());
+        System.out.println("Enter Email Customer: ");
+        customer.setEmail(checkInput.checkEmailCustomer());
+        System.out.println("Enter Type Customer: ");
+        customer.setTypeCustomer(scanner.nextLine());
+        System.out.println("Enter Address Customer: ");
+        customer.setAddress(scanner.nextLine());
+        customerArrayList.add(customer);
+        CustomerCSV.writerCustomerToFileCSV(customerArrayList);
+        System.out.println("Add new Customer complete!!! Enter to continue...");
+        scanner.nextLine();
+        displayMainMenu();
     }
 
     private void addNewServices() {
@@ -118,7 +152,7 @@ public class MainControllers {
         scanner = new Scanner(System.in);
         ArrayList<Room> roomArrayList = new ArrayList<>();
         roomArrayList = RoomCSV.getFileCSVtoListRoom();
-        System.out.println("Enter id: ");
+        System.out.println("Enter Id Villa: ");
         room.setId(scanner.nextLine());
         System.out.println("Enter Service Name: ");
         room.setServiceName(checkInput.checkServiceNameOrCheckRentalTypeOrRoomStandard());
@@ -143,7 +177,7 @@ public class MainControllers {
         scanner = new Scanner(System.in);
         ArrayList<House> houseArrayList = new ArrayList<>();
         houseArrayList = HouseCSV.getFileCSVtoListHouse();
-        System.out.println("Enter id: ");
+        System.out.println("Enter Id House: ");
         house.setId(scanner.nextLine());
         System.out.println("Enter Service Name: ");
         house.setServiceName(checkInput.checkServiceNameOrCheckRentalTypeOrRoomStandard());
@@ -172,7 +206,7 @@ public class MainControllers {
         scanner = new Scanner(System.in);
         ArrayList<Villa> villaArrayList = new ArrayList<>();
         villaArrayList = VillaCSV.getFileCSVtoListVilla();
-        System.out.println("Enter id: ");
+        System.out.println("Enter Id Villa: ");
         villa.setId(scanner.nextLine());
         System.out.println("Enter Service Name: ");
         villa.setServiceName(checkInput.checkServiceNameOrCheckRentalTypeOrRoomStandard());
@@ -256,7 +290,7 @@ public class MainControllers {
         }
         System.out.println("Enter to continue.....");
         scanner.nextLine();
-        showServices();
+        displayMainMenu();
     }
 
     private void showAllNameHouseNotDuplicate() {
@@ -271,7 +305,7 @@ public class MainControllers {
         }
         System.out.println("Enter to continue.....");
         scanner.nextLine();
-        showServices();
+        displayMainMenu();
     }
 
     private void showAllNameVillaNotDuplicate() {
@@ -286,7 +320,7 @@ public class MainControllers {
         }
         System.out.println("Enter to continue.....");
         scanner.nextLine();
-        showServices();
+        displayMainMenu();
     }
 
     private void showAllRoom() {
@@ -298,7 +332,7 @@ public class MainControllers {
         }
         System.out.println("Enter to continue.....");
         scanner.nextLine();
-        showServices();
+        displayMainMenu();
     }
 
     private void showAllHouse() {
@@ -310,7 +344,7 @@ public class MainControllers {
         }
         System.out.println("Enter to continue.....");
         scanner.nextLine();
-        showServices();
+        displayMainMenu();
     }
 
     private void showAllVilla() {
@@ -322,6 +356,6 @@ public class MainControllers {
         }
         System.out.println("Enter to continue.....");
         scanner.nextLine();
-        showServices();
+        displayMainMenu();
     }
 }

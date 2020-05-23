@@ -1,14 +1,6 @@
 package validation;
 
-import com.sun.scenario.effect.impl.sw.java.JSWColorAdjustPeer;
-import exception.BirthdayException;
-import exception.EmailException;
-import exception.IdCardException;
-import exception.NameException;
-import models.Villa;
-
-import java.time.LocalDate;
-import java.time.Period;
+import exception.*;
 import java.util.Scanner;
 
 public class checkInput {
@@ -143,8 +135,20 @@ public class checkInput {
             try {
                 Scanner scanner = new Scanner(System.in);
                 String idCardCustomer = IdCardException.idCardException(scanner.nextLine());
+                return idCardCustomer;
             } catch (Exception i) {
                 System.out.println(i);
+            }
+        }
+    }
+
+    public String checkPhoneNumberCustomer() {
+        while (true) {
+            try {
+                Scanner scanner = new Scanner(System.in);
+                String phoneNumberCustomer = PhoneNumberException.phoneNumberException(scanner.nextLine());
+            } catch (Exception p) {
+                System.out.println(p);
             }
         }
     }
