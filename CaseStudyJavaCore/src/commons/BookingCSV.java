@@ -1,5 +1,6 @@
 package commons;
 
+import com.sun.xml.internal.bind.v2.runtime.reflect.Lister;
 import models.Customer;
 
 import java.io.BufferedReader;
@@ -10,20 +11,21 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.List;
 
-public class CustomerCSV {
+public class BookingCSV {
     private static final String COMMA_DELIMITER = ",";
     private static final String NEW_LIFE_SEPARATOR = "\n";
-    private static final String fileNameCustomer = "src/data/Customer.csv";
-    private static final String FILE_HEADER_CUSTOMER = "nameCustomer,idCard,birthday,gender,cmnd,phoneNumber,email,typeCustomer,address,service";
+    private static final String fileNameBooking = "src/data/Booking.csv";
+    private static final String FILE_HEADER_BOOKING = "nameCustomer,idCard,birthday,gender,cmnd,phoneNumber,email,typeCustomer,address,service,id,serviceName,area,rentalFee,maxGuest,rentalType";
 
-    public static void writerCustomerToFileCSV(ArrayList<Customer> customerArrayList) {
+    public static void writerBookingToFileCSV(List<Customer> customerList) {
         FileWriter fileWriter = null;
         try {
-            fileWriter = new FileWriter(fileNameCustomer);
-            fileWriter.append(FILE_HEADER_CUSTOMER);
+            FileWriter fileWriter1 = new FileWriter(fileNameBooking);
+            fileWriter.append(FILE_HEADER_BOOKING);
             fileWriter.append(NEW_LIFE_SEPARATOR);
-            for (Customer customer : customerArrayList) {
+            for (Customer customer : customerList) {
                 fileWriter.append(customer.getNameCustomer());
                 fileWriter.append(COMMA_DELIMITER);
                 fileWriter.append(customer.getIdCard());
@@ -41,11 +43,23 @@ public class CustomerCSV {
                 fileWriter.append(customer.getTypeCustomer());
                 fileWriter.append(COMMA_DELIMITER);
                 fileWriter.append(customer.getAddress());
+                fileWriter.append(COMMA_DELIMITER);
+                fileWriter.append(customer.getServices().getId());
+                fileWriter.append(COMMA_DELIMITER);
+                fileWriter.append(customer.getServices().getServiceName());
+                fileWriter.append(COMMA_DELIMITER);
+                fileWriter.append(String.valueOf(customer.getServices().getArea()));
+                fileWriter.append(COMMA_DELIMITER);
+                fileWriter.append(String.valueOf(customer.getServices().getRentalFee()));
+                fileWriter.append(COMMA_DELIMITER);
+                fileWriter.append(String.valueOf(customer.getServices().getMaxGuest()));
+                fileWriter.append(COMMA_DELIMITER);
+                fileWriter.append(customer.getServices().getRentalType());
                 fileWriter.append(NEW_LIFE_SEPARATOR);
             }
-            System.out.println("Success add");
+            System.out.println("CSV file was created successfully");
         } catch (Exception e) {
-            System.out.println("Error in CSV file writer!!!");
+            System.out.println("Error in file writer!!!");
         } finally {
             try {
                 fileWriter.flush();
@@ -56,20 +70,20 @@ public class CustomerCSV {
             }
         }
     }
-    public static ArrayList<Customer> getFileCSVtoListCustomer() {
+    public static List<Customer> getFileCSVtoListBooking() {
         BufferedReader bufferedReader = null;
-        ArrayList<Customer> customerArrayList = new ArrayList<>();
-        Path path = Paths.get(fileNameCustomer);
+        List<Customer> customerList = new ArrayList<>();
+        Path path = Paths.get(fileNameBooking);
         if (!Files.exists(path)) {
             try {
-                Writer writer = new FileWriter(fileNameCustomer);
+                Writer writer = new FileWriter(fileNameBooking);
             } catch (Exception e) {
                 System.out.println(e.getMessage());
             }
         }
         try {
             String line;
-            bufferedReader = new BufferedReader(new FileReader(fileNameCustomer));
+            bufferedReader = new BufferedReader(new FileReader(fileNameBooking));
 
             while ((line = bufferedReader.readLine()) != null) {
                 String[] splitData = line.split(",");
@@ -86,7 +100,8 @@ public class CustomerCSV {
                 customer.setEmail(splitData[6]);
                 customer.setTypeCustomer(splitData[7]);
                 customer.setAddress(splitData[8]);
-                customerArrayList.add(customer);
+                customer.setTypeServices(splitData[9],splitData[10],Double.parseDouble(splitData[11]),Double.parseDouble(splitData[12]),Integer.parseInt(splitData[13]),splitData[14]);
+                customerList.add(customer);
             }
         } catch (Exception e) {
             System.out.println(e.getMessage());
@@ -97,6 +112,6 @@ public class CustomerCSV {
                 System.out.println(e.getMessage());
             }
         }
-        return customerArrayList;
+        return customerList;
     }
 }

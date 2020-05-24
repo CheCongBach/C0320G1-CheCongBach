@@ -45,7 +45,7 @@ public class VillaCSV {
                 fileWriter.append(String.valueOf(villa.getPoolArea()));
                 fileWriter.append(NEW_LIFE_SEPARATOR);
             }
-            System.out.println("Success add");
+            System.out.println("CSV file was created successfully");
         } catch (Exception ex) {
             System.out.println("Error in CSV file writer !!!");
         } finally {
@@ -53,7 +53,8 @@ public class VillaCSV {
                 fileWriter.flush();
                 fileWriter.close();
             } catch (Exception ex) {
-                System.out.println("Error when flush or close");
+                System.out.println("Error while flushing/closing fileWriter !!!");
+                ex.printStackTrace();
             }
         }
     }

@@ -29,6 +29,16 @@ public class Customer {
         this.services = services;
     }
 
+    public void setTypeServices(String id, String serviceName, double area, double rentalFee, int maxGuest, String rentalType) {
+        this.services = new Villa();
+        this.services.setId(id);
+        this.services.setServiceName(serviceName);
+        this.services.setArea(area);
+        this.services.setRentalFee(rentalFee);
+        this.services.setMaxGuest(maxGuest);
+        this.services.setRentalType(rentalType);
+    }
+
     public String getNameCustomer() {
         return nameCustomer;
     }

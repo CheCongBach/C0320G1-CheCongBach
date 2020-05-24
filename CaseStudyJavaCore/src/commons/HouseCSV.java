@@ -44,7 +44,7 @@ public class HouseCSV {
                 fileWriter.append(String.valueOf(house.getNumberOfFloors()));
                 fileWriter.append(NEW_LIFE_SEPARATOR);
             }
-            System.out.println("Success add");
+            System.out.println("CSV file was created successfully");
         } catch (Exception ex) {
             System.out.println("Error in CSV file writer !!!");
         } finally {
@@ -52,7 +52,8 @@ public class HouseCSV {
                 fileWriter.flush();
                 fileWriter.close();
             } catch (Exception ex) {
-                System.out.println("Error when flush or close");
+                System.out.println("Error while flushing/closing fileWriter !!!");
+                ex.printStackTrace();
             }
         }
     }
