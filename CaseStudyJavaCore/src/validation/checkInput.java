@@ -147,8 +147,21 @@ public class checkInput {
             try {
                 Scanner scanner = new Scanner(System.in);
                 String phoneNumberCustomer = PhoneNumberException.phoneNumberException(scanner.nextLine());
+                return phoneNumberCustomer;
             } catch (Exception p) {
                 System.out.println(p);
+            }
+        }
+    }
+
+    public String checkGenderCustomer() {
+        while (true) {
+            try {
+                Scanner scanner = new Scanner(System.in);
+                String genderCustomer = GenderException.genderException(scanner.nextLine());
+                return genderCustomer;
+            } catch (Exception g) {
+                System.out.println(g);
             }
         }
     }

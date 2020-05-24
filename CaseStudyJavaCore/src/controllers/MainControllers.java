@@ -97,7 +97,7 @@ public class MainControllers {
         System.out.println("Enter Birthday Customer: ");
         customer.setBirthday(checkInput.checkBirthdayCustomer());
         System.out.println("Enter Gender Customer: ");
-        customer.setGender(scanner.nextLine());
+        customer.setGender(checkInput.checkGenderCustomer());
         System.out.println("Enter Phone Number Customer: ");
         customer.setPhoneNumber(checkInput.checkPhoneNumberCustomer());
         System.out.println("Enter Email Customer: ");
