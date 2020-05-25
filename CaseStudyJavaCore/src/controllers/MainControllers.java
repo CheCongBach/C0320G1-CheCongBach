@@ -1,9 +1,6 @@
 package controllers;
 
-import add.AddNewCustomer;
-import add.AddNewHouse;
-import add.AddNewRoom;
-import add.AddNewVilla;
+import add.*;
 import show.*;
 
 import java.util.*;
@@ -54,7 +51,7 @@ public class MainControllers {
             }
         }
     }
-    
+
     private void addNewServices() {
         String choice;
         System.out.println("1.Add New Villa: " + "\n" + "2.Add New House: " + "\n" + "3.Add New Room: " +
@@ -123,6 +120,10 @@ public class MainControllers {
                 break;
             }
             case "7": {
+                displayMainMenu();
+                break;
+            }
+            case "8": {
                 System.exit(0);
                 break;
             }
@@ -136,18 +137,24 @@ public class MainControllers {
     }
 
     private void showInformationEmployee() {
-
+        ShowAllEmployee.showAllEmployee();
+        System.out.println("Enter to continue.....");
+        scanner.nextLine();
+        displayMainMenu();
     }
 
     private void addNewBooking() {
-
+        AddNewBooking.addNewBooking();
+        System.out.println("Enter to continue.....");
+        scanner.nextLine();
+        displayMainMenu();
     }
 
     private void showInformationCustomers() {
         ShowCustomer.showInformationCustomerSort();
         System.out.println("Enter to continue.....");
         scanner.nextLine();
-        displayMainMenu();
+        showServices();
     }
 
     private void addNewCustomer() {
@@ -161,62 +168,62 @@ public class MainControllers {
         AddNewRoom.addNewRoom();
         System.out.println("Add new Room complete!!! Enter to continue...");
         scanner.nextLine();
-        displayMainMenu();
+        addNewServices();
     }
 
     private void addListHouseService() {
         AddNewHouse.addNewHouse();
         System.out.println("Add new House complete!!! Enter to continue...");
         scanner.nextLine();
-        displayMainMenu();
+        addNewServices();
     }
 
     private void addListVillaService() {
         AddNewVilla.addNewVilla();
         System.out.println("Add new Villa complete!!! Enter to continue...");
         scanner.nextLine();
-        displayMainMenu();
+        addNewServices();
     }
 
     private void showAllNameRoomNotDuplicate() {
         ShowRoomNotDuplicate.showRoomNotDuplicate();
         System.out.println("Enter to continue.....");
         scanner.nextLine();
-        displayMainMenu();
+        showServices();
     }
 
     private void showAllNameHouseNotDuplicate() {
         ShowHouseNotDuplicate.showHouseNotDuplicate();
         System.out.println("Enter to continue.....");
         scanner.nextLine();
-        displayMainMenu();
+        showServices();
     }
 
     private void showAllNameVillaNotDuplicate() {
         ShowVillaNotDuplicate.showVillaNotDuplicate();
         System.out.println("Enter to continue.....");
         scanner.nextLine();
-        displayMainMenu();
+        showServices();
     }
 
     private void showAllRoom() {
         ShowRoom.showRoom();
         System.out.println("Enter to continue.....");
         scanner.nextLine();
-        displayMainMenu();
+        showServices();
     }
 
     private void showAllHouse() {
         ShowHouse.showHouse();
         System.out.println("Enter to continue.....");
         scanner.nextLine();
-        displayMainMenu();
+        showServices();
     }
 
     private void showAllVilla() {
         ShowVilla.showVilla();
         System.out.println("Enter to continue.....");
         scanner.nextLine();
-        displayMainMenu();
+        showServices();
     }
 }
