@@ -87,7 +87,7 @@ public class BookingCSV {
 
             while ((line = bufferedReader.readLine()) != null) {
                 String[] splitData = line.split(",");
-                if (splitData[0].equals("id")) {
+                if (splitData[0].equals("nameCustomer")) {
                     continue;
                 }
                 Customer customer = new Customer();

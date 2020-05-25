@@ -65,7 +65,7 @@ public class EmployeeCSV {
 
             while ((line = br.readLine()) != null) {
                 String[] splitData = line.split(",");
-                if (splitData[0].equals("id")) {
+                if (splitData[0].equals("nameEmployee")) {
                     continue;
                 }
                 Employee employee = new Employee();
