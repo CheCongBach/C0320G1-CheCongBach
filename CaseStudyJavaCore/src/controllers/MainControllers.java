@@ -1,7 +1,6 @@
 package controllers;
 
-import add.*;
-import show.*;
+import service.*;
 
 import java.util.*;
 
@@ -10,8 +9,8 @@ public class MainControllers {
     public void displayMainMenu() {
         String choice;
         System.out.println("1.Add New Services: " + "\n" + "2.Show Services: " + "\n" + "3.Add New Customer: " + "\n" +
-                "4.Show Information of Customer: " + "\n" + "5.Add New Booking: " + "\n"
-                + "6.Show Information of Employee" + "\n" + "7.Exit: ");
+                "4.Show Information of Customer: " + "\n" + "5.Add New Booking: " + "\n" + "6.Add New Employee: " + "\n"
+                + "7.Show Information of Employee: " + "\n" + "8.Add booking cinema 4D: " + "\n" + "9.Show booking cinema 4D: " + "\n" + "10.Search Filing Cabinets of Employee: " + "\n" + "11.Exit: ");
         System.out.println("Enter your choice: ");
         choice = scanner.nextLine();
         switch (choice) {
@@ -36,10 +35,26 @@ public class MainControllers {
                 break;
             }
             case "6": {
-                showInformationEmployee();
+                addNewEmployee();
                 break;
             }
             case "7": {
+                showInformationEmployee();
+                break;
+            }
+            case "8": {
+                addBookingCinema4D();
+                break;
+            }
+            case "9": {
+                showBookingCinema4D();
+                break;
+            }
+            case "10": {
+                searchFilingCabinetsOfEmployee();
+                break;
+            }
+            case "11": {
                 System.exit(0);
                 break;
             }
@@ -92,7 +107,7 @@ public class MainControllers {
         System.out.println("1.Show All Villa: " + "\n" + "2.Show All House: " + "\n" + "3.Show All Room: " + "\n"
                 + "4.Show All Name Villa Not Duplicate: " + "\n" + "5.Show All Name House Not Duplicate:" +
                 "\n" + "6.Show All Name Room Not Duplicate: " + "\n" + "7.Back To Menu: " +
-                "\n" + "7.Exit");
+                "\n" + "8.Exit");
         choice = scanner.nextLine();
         switch (choice) {
             case "1": {
@@ -136,8 +151,30 @@ public class MainControllers {
         }
     }
 
+    private void searchFilingCabinetsOfEmployee() {
+
+    }
+
+    private void showBookingCinema4D() {
+
+    }
+
+    private void addBookingCinema4D() {
+        AddBookingCinema.addBookingCinema();
+        System.out.println("Enter to continue.....");
+        scanner.nextLine();
+        displayMainMenu();
+    }
+
     private void showInformationEmployee() {
         ShowAllEmployee.showAllEmployee();
+        System.out.println("Enter to continue.....");
+        scanner.nextLine();
+        displayMainMenu();
+    }
+
+    private void addNewEmployee() {
+        AddNewEmployee.addNewEmployee();
         System.out.println("Enter to continue.....");
         scanner.nextLine();
         displayMainMenu();

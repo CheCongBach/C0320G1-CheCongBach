@@ -6,7 +6,7 @@ public class EmailException extends Exception {
     }
 
     public static String emailException(String emailCustomer) throws EmailException {
-        String regex = "^[_A-Za-z0-9-\\\\+]+(\\\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\\\.[A-Za-z0-9]+)*(\\\\.[A-Za-z]{2,})$";
+        String regex = "\\S+@\\S+\\.\\S+";
         if (emailCustomer.matches(regex)) {
             return emailCustomer;
         } else {

@@ -1,4 +1,4 @@
-package show;
+package service;
 
 import commons.HouseCSV;
 import models.House;

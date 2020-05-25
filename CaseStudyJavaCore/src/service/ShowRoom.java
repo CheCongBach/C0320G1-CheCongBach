@@ -1,4 +1,4 @@
-package show;
+package service;
 
 import commons.RoomCSV;
 import models.Room;
