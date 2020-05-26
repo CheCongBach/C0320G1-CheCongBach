@@ -22,6 +22,8 @@ public class AddNewCustomer {
         customer.setBirthday(checkInput.checkBirthdayCustomer());
         System.out.println("Enter Gender Customer: ");
         customer.setGender(checkInput.checkGenderCustomer());
+        System.out.println("Enter Cmnd Customer: ");
+        customer.setCmnd(checkInput.checkCmndCustomer());
         System.out.println("Enter Phone Number Customer: ");
         customer.setPhoneNumber(checkInput.checkPhoneNumberCustomer());
         System.out.println("Enter Email Customer: ");

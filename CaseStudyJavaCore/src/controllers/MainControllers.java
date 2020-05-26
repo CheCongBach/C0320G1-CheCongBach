@@ -10,7 +10,7 @@ public class MainControllers {
         String choice;
         System.out.println("1.Add New Services: " + "\n" + "2.Show Services: " + "\n" + "3.Add New Customer: " + "\n" +
                 "4.Show Information of Customer: " + "\n" + "5.Add New Booking: " + "\n" + "6.Add New Employee: " + "\n"
-                + "7.Show Information of Employee: " + "\n" + "8.Add booking cinema 4D: " + "\n" + "9.Show booking cinema 4D: " + "\n" + "10.Search Filing Cabinets of Employee: " + "\n" + "11.Exit: ");
+                + "7.Show Information of Employee: " + "\n" + "8.Add booking and show booking cinema 4D: " + "\n" + "9.Search Filing Cabinets of Employee: " + "\n" + "10.Exit: ");
         System.out.println("Enter your choice: ");
         choice = scanner.nextLine();
         switch (choice) {
@@ -43,18 +43,14 @@ public class MainControllers {
                 break;
             }
             case "8": {
-                addBookingCinema4D();
+                addBookingAndShowBookingCinema4D();
                 break;
             }
             case "9": {
-                showBookingCinema4D();
-                break;
-            }
-            case "10": {
                 searchFilingCabinetsOfEmployee();
                 break;
             }
-            case "11": {
+            case "10": {
                 System.exit(0);
                 break;
             }
@@ -154,12 +150,8 @@ public class MainControllers {
     private void searchFilingCabinetsOfEmployee() {
 
     }
-
-    private void showBookingCinema4D() {
-
-    }
-
-    private void addBookingCinema4D() {
+    
+    private void addBookingAndShowBookingCinema4D() {
         AddBookingCinema.addBookingCinema();
         System.out.println("Enter to continue.....");
         scanner.nextLine();

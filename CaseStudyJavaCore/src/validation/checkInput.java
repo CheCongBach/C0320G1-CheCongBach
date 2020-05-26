@@ -165,4 +165,16 @@ public class checkInput {
             }
         }
     }
+
+    public String checkCmndCustomer() {
+        while (true) {
+            try {
+                Scanner scanner = new Scanner(System.in);
+                String cmndCustomer = CmndException.cmndException(scanner.nextLine());
+                return  cmndCustomer;
+            } catch (Exception c) {
+                System.out.println(c);
+            }
+        }
+    }
 }

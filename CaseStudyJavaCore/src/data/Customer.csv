@@ -1,2 +1,3 @@
 nameCustomer,idCard,birthday,gender,cmnd,phoneNumber,email,typeCustomer,address,service
-Che Cong Bach,123 456 789,13/05/1997,Male,null,0905051904,abc@abc.com,Vip,Da Nang
+Che Cong Bach,123 456 789,13/05/1997,Male,12345678,0905051904,chebach97bk@gmail.com,Vi,Da Nang
+Che Cong Khoa,123 456 789,03/08/1997,Male,12345678,0935123456,checongkhoa@gmail.com,Vip,Da Nang
