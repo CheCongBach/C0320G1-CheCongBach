@@ -22,7 +22,7 @@ public class BookingCSV {
     public static void writerBookingToFileCSV(List<Customer> customerList) {
         FileWriter fileWriter = null;
         try {
-            FileWriter fileWriter1 = new FileWriter(fileNameBooking);
+            fileWriter = new FileWriter(fileNameBooking);
             fileWriter.append(FILE_HEADER_BOOKING);
             fileWriter.append(NEW_LIFE_SEPARATOR);
             for (Customer customer : customerList) {
