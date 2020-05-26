@@ -48,7 +48,7 @@ public class checkInput {
                 if (maxGuest > 0 && maxGuest < 20) {
                     return maxGuest;
                 } else {
-                    System.out.println("Maximum number of people must be greater than 0 and smaller than 30");
+                    System.out.println("Maximum number of people must be greater than 0 and smaller than 20");
                     System.out.println("Please enter again");
                 }
             } catch (NumberFormatException e) {
