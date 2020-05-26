@@ -14,7 +14,7 @@ public class AddNewRoom {
         checkInput checkInput = new checkInput();
         ArrayList<Room> roomArrayList = new ArrayList<>();
         roomArrayList = RoomCSV.getFileCSVtoListRoom();
-        System.out.println("Enter Id Villa: ");
+        System.out.println("Enter Id Room: ");
         room.setId(scanner.nextLine());
         System.out.println("Enter Service Name: ");
         room.setServiceName(checkInput.checkServiceNameOrCheckRentalTypeOrRoomStandard());
