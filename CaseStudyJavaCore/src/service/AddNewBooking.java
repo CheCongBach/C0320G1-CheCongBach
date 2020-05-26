@@ -32,6 +32,8 @@ public class AddNewBooking {
         }
         Customer customer = customerList.get(Integer.parseInt(choice) - 1);
         System.out.println("1.Booking Villa: " + "\n" + "2.Booking House: " + "\n" + "3.Booking Room: " + "\n" + "4.Exit: ");
+        System.out.println("Enter your choice: ");
+        choice = scanner.nextLine();
         switch (choice) {
             case "1": {
                 List<Villa> villaList = VillaCSV.getFileCSVtoListVilla();
