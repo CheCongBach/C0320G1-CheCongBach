@@ -1,0 +1,70 @@
+package Customer;
+
+public class Customer {
+    private int ID;
+    private String name;
+    private int age;
+    private String birthday;
+    private String address;
+    private String images;
+
+    public Customer() {
+    }
+
+    public Customer(int ID, String name, int age,String birthday, String address, String images) {
+        this.ID = ID;
+        this.name = name;
+        this.age = age;
+        this.birthday = birthday;
+        this.address = address;
+        this.images = images;
+    }
+
+    public int getID() {
+        return ID;
+    }
+
+    public void setID(int ID) {
+        this.ID = ID;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public String getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(String birthday) {
+        this.birthday = birthday;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getImages() {
+        return images;
+    }
+
+    public void setImages(String images) {
+        this.images = images;
+    }
+}
