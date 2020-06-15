@@ -1,0 +1,15 @@
+package com.codegym.productthymeleaf.repository;
+
+import java.util.List;
+
+public interface Repository<T> {
+    List<T> getAll();
+
+    T getById(int id);
+
+    void deleteById(int id);
+
+    void save(T t);
+
+    void update(int id, T t);
+}

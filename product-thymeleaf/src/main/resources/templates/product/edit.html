@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Product</title>
+    <style type="text/css">
+        h3{background-color: honeydew; color: white; padding: 10px 0 10px 20px;}
+        footer{margin: 10px 0;}
+
+        #customers {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        #customers td, #customers th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        #customers tr:nth-child(even){background-color: #f2f2f2;}
+
+        #customers tr:hover {background-color: #ddd;}
+
+        #customers th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        input[type=text],input[type=email]{
+            width: 100%;
+            padding: 12px 0px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            color: grey;
+        }
+
+        input[type=submit] {
+            width: 300px;
+            background-color: #4CAF50;
+            color: grey;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+
+        #form {
+            width: 500px;
+            border-radius: 20px;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+
+        .notify span{font-size: 15px; color: grey;}
+    </style>
+</head>
+<body>
+<h1 style="color: chartreuse">Sửa đổi thông tin sản phẩm</h1>
+<h2><a th:href="@{/}">
+    Suy nghĩ lại không cần cập nhật nữa
+</a></h2>
+<div id="form">
+    <form th:method="post" action="/product/edit" th:object="${product}" novalidate="novalidate">
+        <input type="hidden" th:field="${product.id}">
+        <div>
+            <h3><label style="color: green">Tên sản phẩm: </label></h3>
+            <br>
+            <input type="text" th:field="${product.name}">
+        </div>
+        <div>
+            <h3><label style="color: green">Gía: </label></h3>
+            <br>
+            <input type="text" th:field="${product.price}">
+        </div>
+        <div>
+            <h3><label style="color: green">Mô tả: </label></h3>
+            <br>
+            <input type="text" th:field="${product.description}">
+        </div>
+        <div>
+            <h3><label style="color: green">Tình trạng: </label></h3>
+            <br>
+            <input type="text" th:field="${product.status}">
+        </div>
+        <div>
+            <h3><label style="color: green">Nhà sản xuất: </label></h3>
+            <br>
+            <input type="text" th:field="${product.producer}">
+        </div>
+        <input type="submit" value="Cập nhật thông tin sản phẩm" style="color : black">
+    </form>
+</div>
+<footer th:fragment="footer">
+    &copy; 2020 CodeGymDaNang
+</footer>
+</body>
+</html>
