@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Soccer</title>
+    <style>
+        input[type=text],input[type=email]{
+            width: 100%;
+            padding: 12px 0px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            color: darkslategray;
+        }
+
+        input[type=submit] {
+            width: 500px;
+            background-color: darkslategray;
+            color: darkslategray;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        input[type=submit]:hover {
+            background-color: darkslategray;
+        }
+
+        #form {
+            width: 500px;
+            border-radius: 20px;
+            background-color: #e9f280;
+            padding: 20px;
+        }
+        body {
+            width: 50%;
+            margin-left: 25%;
+        }
+        .notify span{font-size: 15px; color: darkslategray;}
+    </style>
+</head>
+<body>
+<h1 style="color: brown">Create Player Soccers</h1>
+<h2><a th:href="@{/playersoccers}">Back to list Player</a></h2>
+<div id="form">
+    <form th:method="post" action="/playersoccers/delete-player" th:object="${playerSoccer}" novalidate="novalidate">
+        <input type="hidden" th:field="${playerSoccer.id}">
+        <input type="hidden" th:field="${playerSoccer.deleteIs}">
+        <div>
+            <h3><label style="color: orange">First Name: </label><input type="text" th:field="${playerSoccer.firstName}"></h3>
+        </div>
+        <div>
+            <h3><label style="color: orange">Last Name: </label><input type="text" th:field="${playerSoccer.lastName}"></h3>
+        </div>
+        <div>
+            <h3><label style="color: orange">Age: </label><input type="text" th:field="${playerSoccer.age}"></h3>
+        </div>
+        <div>
+            <h3><label style="color: orange">Weight: </label><input type="text" th:field="${playerSoccer.weight}"></h3>
+        </div>
+        <div>
+            <h3><label style="color: orange">Height: </label><input type="text" th:field="${playerSoccer.height}"></h3>
+        </div>
+        <div>
+            <h3><label style="color: orange">Player Club: </label></h3>
+            <select th:field="*{club.id}" style="width: 300px; height: 30px; border-radius: 10px; font-size: 18px">
+                <option th:each="p : ${clubs}" th:value="${p.id}" th:text="${p.nameClub}"></option>
+            </select>
+        </div>
+        <input type="submit" value="Delete Player" style="color : orange">
+    </form>
+</div>
+<footer th:fragment="footer">
+    &copy; 2020 BachCheSenior
+</footer>
+</body>
+</html>

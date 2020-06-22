@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>List Player Soccer</title>
+    <style>
+        #playerSoccer {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        #playerSoccer td, #playerSoccer th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        #playerSoccer tr:nth-child(even){background-color: #b294ff;}
+
+        #playerSoccer tr:hover {background-color: greenyellow;}
+
+        #playerSoccer th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: black;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+<fieldset>
+    <legend>
+        <h1 style="color: chocolate">List Player Soccer</h1>
+        <h2 style="color: greenyellow"><a th:href="@{/playersoccers/create}">Create New Player Soccer</a></h2>
+        <h2 style="color: greenyellow"><a th:href="@{/}">Back to index</a></h2>
+    </legend>
+    <form>
+        <h3 style="color: chocolate">Search by first name: </h3>
+        <input type="text" name="s" placeholder="enter name player" th:value="${s}">
+        <input type="submit" value="Search">
+    </form>
+    <form>
+        <h3 style="color: chocolate">Search by last name and age: </h3>
+        <input type="text" name="s3" placeholder="enter last name player" th:value="${s3}">
+        <input type="text" name="s4" placeholder="enter age player" th:value="${s4}">
+        <input type="submit" value="Search">
+    </form>
+    <form>
+        <h3 style="color: chocolate">Search by first name and club: </h3>
+        <input type="text" name="s1" placeholder="enter name player" th:value="${s1}">
+        <select name="s2" th:value="${s2}">
+            <option th:each="p : ${clubs}" th:value="${p.id}" th:text="${p.nameClub}"></option>
+        </select>
+        <input type="submit" value="Search">
+    </form>
+</fieldset>
+<br>
+<table border="1" id="playerSoccer">
+    <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Age</th>
+        <th>Height</th>
+        <th>Weight</th>
+        <th>Club</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+    <th:block th:each="playerSoccer : ${playerSoccers}" th:if="${playerSoccer.deleteIs == false}">
+        <tr>
+            <td th:text="${playerSoccer.firstName}"></td>
+            <td th:text="${playerSoccer.lastName}"></td>
+            <td th:text="${playerSoccer.age}"></td>
+            <td th:text="${playerSoccer.height}"></td>
+            <td th:text="${playerSoccer.weight}"></td>
+            <td th:text="${playerSoccer.club.nameClub}"></td>
+            <td><a th:href="@{/playersoccers/edit-player/__${playerSoccer.id}__}">Edit</a></td>
+            <td><a th:href="@{/playersoccers/delete-player/__${playerSoccer.id}__}">Delete</a></td>
+        </tr>
+    </th:block>
+</table>
+<div>
+    <a th:href="@{'/playersoccers' + ${'?page=' + __${playerSoccers.number}__} + ${(s != null)? '&s=':''}  + ${s?: ''} + ${(s1 != null)? '&s1=':''} + ${s1?: ''} + ${(s2 != null)? '&s2=':''} + ${s2?: ''} }" th:if="${playerSoccers.hasPrevious()}">Previous</a>
+<!--    <a th:href="@{'/playersoccers'(page=${playerSoccers.number},s=${s},s1=${s1},s2=${s2})}" th:if="${playerSoccers.hasPrevious()}">Previous</a>-->
+    <span th:text="${playerSoccers.number + 1}"></span>/<span th:text="${playerSoccers.totalPages}"></span>
+<!--    <a th:href="@{'/playersoccers'(page=${playerSoccers.number + 2},s=${s},s1=${s1},s2=${s2})}" th:if="${playerSoccers.hasNext()}">Next</a>-->
+    <a th:href="@{'/playersoccers' + ${'?page=' + __${playerSoccers.number + 2}__} + ${(s != null)? '&s=':''}  + ${s?: ''} + ${(s1 != null)? '&s1=':''} + ${s1?: ''} + ${(s2 != null)? '&s2=':''} + ${s2?: ''} }" th:if="${playerSoccers.hasNext()}">Next</a>
+</div>
+<footer th:fragment="footer">
+    &copy; 2020 BachCheSenior
+</footer>
+</body>
+</html>

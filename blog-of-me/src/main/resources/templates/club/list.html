@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>List Club</title>
+    <style>
+        #club {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        #club td, #club th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        #club tr:nth-child(even){background-color: #b294ff;}
+
+        #club tr:hover {background-color: greenyellow;}
+
+        #club th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: black;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+<fieldset>
+    <legend>
+        <h1 style="color: chocolate">List Club</h1>
+        <h2 style="color: greenyellow"><a th:href="@{/clubs/create}">Create New Player Soccer</a></h2>
+        <h2 style="color: greenyellow"><a th:href="@{/}">Back to index</a></h2>
+    </legend>
+</fieldset>
+<br>
+<table border="1" id="club">
+    <tr>
+        <th>Name Club</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+    <th:block th:each="club : ${clubs}" th:if="${club.deleteIs == false}">
+        <tr>
+            <td th:text="${club.nameClub}"></td>
+            <td><a th:href="@{/clubs/edit-club/__${club.id}__}">Edit</a></td>
+            <td><a th:href="@{/clubs/delete-club/__${club.id}__}">Delete</a></td>
+        </tr>
+    </th:block>
+</table>
+<div>
+    <a th:href="@{'/clubs'(page=${clubs.number})}" th:if="${clubs.hasPrevious()}">Previous</a>
+    <span th:text="${clubs.number + 1}"></span>/<span th:text="${clubs.totalPages}"></span>
+    <a th:href="@{'/clubs'(page=${clubs.number + 2})}" th:if="${clubs.hasNext()}">Next</a>
+</div>
+<footer th:fragment="footer">
+    &copy; 2020 BachCheSenior
+</footer>
+</body>
+</html>
