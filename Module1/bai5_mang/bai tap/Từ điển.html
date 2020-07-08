@@ -5,18 +5,18 @@
     <title>Từ điển</title>
 </head>
 <body>
-     <script>
-         let result = prompt("Nhập từ cần tra");
-         let tiengViet = ["chó","mèo","vàng","đỏ"];
-         let tiengAnh = ["dog","cat","yellow","red"];
-         let x =[];
-         let i = tiengAnh.indexOf(result);
-                 if (i !== -1) {
-                     x.push(tiengViet[i]);
-                 } else {
-                     alert("Không tìm thấy");
-                 }
-             document.write(x[0]);
-     </script>
+<script>
+    let result = prompt("Nhập từ cần tra");
+    let tiengViet = ["chó", "mèo", "vàng", "đỏ"];
+    let tiengAnh = ["dog", "cat", "yellow", "red"];
+    let x = [];
+    let i = tiengAnh.indexOf(result);
+    if (i !== -1) {
+        x.push(tiengViet[i]);
+    } else {
+        alert("Không tìm thấy");
+    }
+    document.write(x[0]);
+</script>
 </body>
 </html>

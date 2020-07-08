@@ -1,0 +1,48 @@
+header {
+    position: relative;
+}
+.shopping-mall{
+    position: absolute;
+    bottom: 20px;
+    font-variant: small-caps;
+}
+.shopping-mall>h1{
+    font-family: Impact;
+    font-size: 65px;
+    color: rgba(255, 85, 124, 0.91);
+    letter-spacing: 0.3px;
+    text-shadow: 0 0 2px #de8e1b;
+    padding-bottom: 0px;
+    border-bottom: 1px dotted gray;
+    margin: 0px;
+}
+.shopping-mall>h2{
+    margin-top: 2px;
+    letter-spacing: 0.5px;
+    color: darkmagenta;
+    font-size: 30px;
+}
+.panel-body img {
+    /*margin-left: -12px;*/
+    /*position: absolute;*/
+    /*top : 50%;*/
+    /*left: 50%;*/
+    /*transform: translateY(-50%) translateX(-50%);*/
+    width: 60%;
+    height: 60%;
+    /*object-fit: cover;*/
+    /*justify-content: center;*/
+}
+
+.panel-body{
+    height: 350px !important;
+    /*position: relative;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*.container-fluid{*/
+/*    padding-left: 1px;*/
+/*    padding-right: 1px;*/
+/*}*/

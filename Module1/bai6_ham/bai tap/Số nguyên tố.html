@@ -5,26 +5,28 @@
     <title>Số nguyên tố</title>
 </head>
 <body>
-      <script>
-          let number = 2;
-          let i = 2;
-          let count = 0;
-          let check = true;
-          function checkPrime(number) {
-              for (i=2; i <= Math.sqrt(number); i++) {
-                  if (number % i === 0) {
-                      return false;
-                  }
-              }
-              return true;
-          }
-          while (count < 1000) {
-              if (checkPrime(number)) {
-                  document.write(number + "<br/>");
-                  count ++;
-              }
-              number++;
-          }
-      </script>
+<script>
+    let number = 2;
+    let i = 2;
+    let count = 0;
+    let check = true;
+
+    function checkPrime(number) {
+        for (i = 2; i <= Math.sqrt(number); i++) {
+            if (number % i === 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    while (count < 1000) {
+        if (checkPrime(number)) {
+            document.write(number + "<br/>");
+            count++;
+        }
+        number++;
+    }
+</script>
 </body>
 </html>

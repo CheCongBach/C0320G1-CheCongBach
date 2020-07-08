@@ -5,20 +5,21 @@
     <title>Bài 2</title>
 </head>
 <body>
-     <button type="button" onclick="showMessage()">Hiển thị</button>
-     <script>
-         let x = [1,2,3,4,5,6,15,8,9,10];
-         let i;
-         function showMessage() {
-             let max = x[0];
-            for (i=1; i < x.length; i++) {
-                if (x[i] > max) {
-                   max = x[i];
-                }
+<button type="button" onclick="showMessage()">Hiển thị</button>
+<script>
+    let x = [1, 2, 3, 4, 5, 6, 15, 8, 9, 10];
+    let i;
+
+    function showMessage() {
+        let max = x[0];
+        for (i = 1; i < x.length; i++) {
+            if (x[i] > max) {
+                max = x[i];
             }
-            document.write("Số lớn nhất là: " + max + "<br/>");
-            document.write("Vị trí số " + x.indexOf(max));
-         }
-     </script>
+        }
+        document.write("Số lớn nhất là: " + max + "<br/>");
+        document.write("Vị trí số " + x.indexOf(max));
+    }
+</script>
 </body>
 </html>

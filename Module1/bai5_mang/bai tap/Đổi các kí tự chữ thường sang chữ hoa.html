@@ -5,20 +5,20 @@
     <title>Đổi chữ thường sang chữ hoa</title>
 </head>
 <body>
-      <script>
-         let chuoiKitu = prompt("Nhập 1 chuỗi kí tự");
-         let x = [];
-         let i;
-         let UPPER = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-         let LOWER = 'abcdefghijklmnopqrstuvwxyz';
-         for (i = 0; i < chuoiKitu.length; i++) {
-             if (LOWER.indexOf(chuoiKitu[i]) !== -1) {
-                 x.push(chuoiKitu[i].toUpperCase());
-             } else if (UPPER.indexOf(chuoiKitu[i]) !== -1) {
-                 x.push(chuoiKitu[i].toLowerCase());
-             }
-         }
-         document.write(x.join(" "));
-      </script>
+<script>
+    let chuoiKitu = prompt("Nhập 1 chuỗi kí tự");
+    let x = [];
+    let i;
+    let UPPER = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    let LOWER = 'abcdefghijklmnopqrstuvwxyz';
+    for (i = 0; i < chuoiKitu.length; i++) {
+        if (LOWER.indexOf(chuoiKitu[i]) !== -1) {
+            x.push(chuoiKitu[i].toUpperCase());
+        } else if (UPPER.indexOf(chuoiKitu[i]) !== -1) {
+            x.push(chuoiKitu[i].toLowerCase());
+        }
+    }
+    document.write(x.join(" "));
+</script>
 </body>
 </html>

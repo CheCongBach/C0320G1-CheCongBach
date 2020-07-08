@@ -5,120 +5,140 @@
     <title>Yêu cầu 2</title>
 </head>
 <body>
-      <h3> Tên khách hàng <input type="text" id="name"> </h3>
-      <h3> Số chứng minh nhân dân <input type="text" id="cmnd"> </h3>
-      <h3> Ngày tháng năm sinh <input type="text" id="birthday"> </h3>
-      <h3> Địa chỉ email <input type="text" id="email"> </h3>
+<h3> Tên khách hàng <input type="text" id="name"></h3>
+<h3> Số chứng minh nhân dân <input type="text" id="cmnd"></h3>
+<h3> Ngày tháng năm sinh <input type="text" id="birthday"></h3>
+<h3> Địa chỉ email <input type="text" id="email"></h3>
 
-      <h3> Nhập loại khách hàng <select id="typeCustomer"> </h3>
-          <option value="Diamond">Diamond</option>
-          <option value="Platium">Platium</option>
-          <option value="Gold">Gold</option>
-          <option value="Silver">Silver</option>
-          <option value="Member">Member</option>
-      </select>
+<h3> Nhập loại khách hàng <select id="typeCustomer"></h3>
+<option value="Diamond">Diamond</option>
+<option value="Platium">Platium</option>
+<option value="Gold">Gold</option>
+<option value="Silver">Silver</option>
+<option value="Member">Member</option>
+</select>
 
-      <h3> Nhập địa chỉ <select id="address"> </h3>
-          <option value="daNang">Đà Nẵng</option>
-          <option value="hue">Huế</option>
-          <option value="quangNam">Quảng Nam</option>
-      </select>
+<h3> Nhập địa chỉ <select id="address"></h3>
+<option value="daNang">Đà Nẵng</option>
+<option value="hue">Huế</option>
+<option value="quangNam">Quảng Nam</option>
+</select>
 
-      <h3> Khoảng thời gian lưu trú <select id="rentDay"> </h3>
-          <option value="2-4 Ngay">2-4 ngày</option>
-          <option value="5-7 Ngay">5-7 ngày</option>
-          <option value="7 Ngay tro len">7 ngày trở lên</option>
-      </select>
+<h3> Khoảng thời gian lưu trú <select id="rentDay"></h3>
+<option value="2-4 Ngay">2-4 ngày</option>
+<option value="5-7 Ngay">5-7 ngày</option>
+<option value="7 Ngay tro len">7 ngày trở lên</option>
+</select>
 
-      <h3> Loại dịch vụ </h3>
-      <select id="typeRoom">
-          <option value="villa">villa</option>
-          <option value="house">house</option>
-          <option value="room">room</option>
-      </select>
-      <h3> Thông tin khách hàng <button type="button" onclick="showMessage6()">Submit</button></h3>
-      <h3> Gỉam giá theo Customer <input id="result1"> <button type="button" onclick="showMessage()">Hiển thị</button> </h3>
-      <h3> Gỉam giá theo địa chỉ <input id="result2"> <button type="button" onclick="showMessage1()">Hiển thị</button> </h3>
-      <h3> Gỉam giá theo ngày lưu trú <input id="result3"> <button type="button" onclick="showMessage2()">Hiển thị</button> </h3>
-      <h3> Số tiền giảm giá <input id="result4"> <button type="button" onclick="showMessage3()">Tính tiền giảm giá</button> </h3>
-      <h3> Tiền loại dịch vụ <input id="result5"> <button type="button" onclick="showMessage4()">Hiển thị</button></h3>
-      <h3> Số tiền phải trả <input id="result6"> <button type="button" onclick="showMessage5()">Số tiền phải trả</button> </h3>
-      <script>
-          let result1;
-          let result2;
-          let result3;
-          let result4;
-          let result5;
-          let result6;
-          let name = document.getElementById("name");
-          let cmnd = document.getElementById("cmnd");
-          let birthday = document.getElementById("birthday");
-          let email = document.getElementById("email");
-          let typeCustomer = document.getElementById("typeCustomer");
-          let address = document.getElementById("address");
-          let rentDay = document.getElementById("rentDay");
-          let typeRoom = document.getElementById("typeRoom");
-          let rentDay1 = parseInt(prompt("Nhập số ngày lưu trú", ""));
-         function showMessage() {
-             if (typeCustomer.value === "Diamond") {
-                 result1 = 15;
-             } else if (typeCustomer.value === "Platium") {
-                 result1 = 10;
-             } else if (typeCustomer.value === "Gold") {
-                 result1 = 5;
-             } else if (typeCustomer.value === "Silver") {
-                 result1 = 2;
-             } else if (typeCustomer.value === "Member") {
-                 result1 = 0;
-             }
-             document.getElementById("result1").value = result1;
-         }
-         function showMessage1() {
-             if (address.value === "daNang") {
-                 result2 = 20;
-             } else if (address.value === "hue") {
-                 result2 = 10;
-             } else if (address.value === "quangNam") {
-                 result2 = 5;
-             }
-             document.getElementById("result2").value = result2;
-         }
-         function showMessage2() {
-             if (rentDay.value === "2-4 Ngay") {
-                 result3 = 10;
-             } else if (rentDay.value === "5-7 Ngay") {
-                 result3 = 20;
-             } else if (rentDay.value === "7 Ngay tro len") {
-                 result3 = 30;
-             }
-             document.getElementById("result3").value = result3;
-         }
-         function showMessage3() {
-              result4 = result1 + result2 + result3;
-              document.getElementById("result4").value = result4;
-         }
-         function showMessage4() {
-             if (typeRoom.value === "villa") {
-                 result5 = 500;
-             } else if (typeRoom.value === "hpuse") {
-                 result5 = 300;
-             } else if (typeRoom.value === "room") {
-                 result5 = 100;
-             }
-             document.getElementById("result5").value = result5;
-         }
-         function showMessage5() {
-             result6 = result5 * rentDay1 - result4;
-             document.getElementById("result6").value = result6;
-         }
-         function showMessage6() {
-             alert("Tên khách hàng: " + name.value + "Ngày tháng năm sinh: " + birthday.value + "Địa chỉ email: " + email.value + "Chứng minh nhân dân: " + cmnd.value
-             + "Loại khách hàng: " + typeCustomer.value + "Địa chỉ: " + address.value + "Khoảng ngày ở lại: " + rentDay.value + "Loại phòng" + typeRoom.value);
-         }
+<h3> Loại dịch vụ </h3>
+<select id="typeRoom">
+    <option value="villa">villa</option>
+    <option value="house">house</option>
+    <option value="room">room</option>
+</select>
+<h3> Thông tin khách hàng
+    <button type="button" onclick="showMessage6()">Submit</button>
+</h3>
+<h3> Gỉam giá theo Customer <input id="result1">
+    <button type="button" onclick="showMessage()">Hiển thị</button>
+</h3>
+<h3> Gỉam giá theo địa chỉ <input id="result2">
+    <button type="button" onclick="showMessage1()">Hiển thị</button>
+</h3>
+<h3> Gỉam giá theo ngày lưu trú <input id="result3">
+    <button type="button" onclick="showMessage2()">Hiển thị</button>
+</h3>
+<h3> Số tiền giảm giá <input id="result4">
+    <button type="button" onclick="showMessage3()">Tính tiền giảm giá</button>
+</h3>
+<h3> Tiền loại dịch vụ <input id="result5">
+    <button type="button" onclick="showMessage4()">Hiển thị</button>
+</h3>
+<h3> Số tiền phải trả <input id="result6">
+    <button type="button" onclick="showMessage5()">Số tiền phải trả</button>
+</h3>
+<script>
+    let result1;
+    let result2;
+    let result3;
+    let result4;
+    let result5;
+    let result6;
+    let name = document.getElementById("name");
+    let cmnd = document.getElementById("cmnd");
+    let birthday = document.getElementById("birthday");
+    let email = document.getElementById("email");
+    let typeCustomer = document.getElementById("typeCustomer");
+    let address = document.getElementById("address");
+    let rentDay = document.getElementById("rentDay");
+    let typeRoom = document.getElementById("typeRoom");
+    let rentDay1 = parseInt(prompt("Nhập số ngày lưu trú", ""));
+
+    function showMessage() {
+        if (typeCustomer.value === "Diamond") {
+            result1 = 15;
+        } else if (typeCustomer.value === "Platium") {
+            result1 = 10;
+        } else if (typeCustomer.value === "Gold") {
+            result1 = 5;
+        } else if (typeCustomer.value === "Silver") {
+            result1 = 2;
+        } else if (typeCustomer.value === "Member") {
+            result1 = 0;
+        }
+        document.getElementById("result1").value = result1;
+    }
+
+    function showMessage1() {
+        if (address.value === "daNang") {
+            result2 = 20;
+        } else if (address.value === "hue") {
+            result2 = 10;
+        } else if (address.value === "quangNam") {
+            result2 = 5;
+        }
+        document.getElementById("result2").value = result2;
+    }
+
+    function showMessage2() {
+        if (rentDay.value === "2-4 Ngay") {
+            result3 = 10;
+        } else if (rentDay.value === "5-7 Ngay") {
+            result3 = 20;
+        } else if (rentDay.value === "7 Ngay tro len") {
+            result3 = 30;
+        }
+        document.getElementById("result3").value = result3;
+    }
+
+    function showMessage3() {
+        result4 = result1 + result2 + result3;
+        document.getElementById("result4").value = result4;
+    }
+
+    function showMessage4() {
+        if (typeRoom.value === "villa") {
+            result5 = 500;
+        } else if (typeRoom.value === "hpuse") {
+            result5 = 300;
+        } else if (typeRoom.value === "room") {
+            result5 = 100;
+        }
+        document.getElementById("result5").value = result5;
+    }
+
+    function showMessage5() {
+        result6 = result5 * rentDay1 - result4;
+        document.getElementById("result6").value = result6;
+    }
+
+    function showMessage6() {
+        alert("Tên khách hàng: " + name.value + "Ngày tháng năm sinh: " + birthday.value + "Địa chỉ email: " + email.value + "Chứng minh nhân dân: " + cmnd.value
+            + "Loại khách hàng: " + typeCustomer.value + "Địa chỉ: " + address.value + "Khoảng ngày ở lại: " + rentDay.value + "Loại phòng" + typeRoom.value);
+    }
 
 
-
-      </script>
+</script>
 
 </body>
 </html>

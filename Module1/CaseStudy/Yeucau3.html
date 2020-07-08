@@ -5,149 +5,150 @@
     <title>Yêu cầu 3</title>
 </head>
 <body>
-      <script>
-         let check = false;
-         do {
-             let count = 0;
-             let count1 = 0;
-             let email = prompt("Nhập email: ");
-             for (let i = 0; i < email.length; i++) {
-                 if (email.charAt(i) === "@") {
-                     count ++;
-                     for (let j = 0; j < email.length; j++) {
-                         if (email.charAt(j) === ".") {
-                             count1 ++;
-                         }
-                     }
-                 }
-             }
-             if (count != 1 || count1 < 1) {
-                 alert("Email của bạn không đúng định dạng");
-             } else {
-                 check = true;
-                 alert("Email của bạn nhập đúng định dạng");
-             }
-         } while (!check)
+<script>
+    let check = false;
+    do {
+        let count = 0;
+        let count1 = 0;
+        let email = prompt("Nhập email: ");
+        for (let i = 0; i < email.length; i++) {
+            if (email.charAt(i) === "@") {
+                count++;
+                for (let j = 0; j < email.length; j++) {
+                    if (email.charAt(j) === ".") {
+                        count1++;
+                    }
+                }
+            }
+        }
+        if (count != 1 || count1 < 1) {
+            alert("Email của bạn không đúng định dạng");
+        } else {
+            check = true;
+            alert("Email của bạn nhập đúng định dạng");
+        }
+    } while (!check)
 
-         check = false;
-         do {
-             let cmnd = prompt("Nhập số chứng minh nhân dân: ");
-             if (!isNaN(cmnd)) {
-                 cmnd = Number.parseFloat(cmnd);
-             }
-             if (!Number.isInteger(cmnd)) {
-                 alert("Chứng minh nhân dân không đúng định dạng");
-                 continue;
-             }
-             if (cmnd < 10000000 || cmnd > 99999999) {
-                 alert("Chứng minh nhân dân không đúng định dạng");
-                 continue;
-             }
-             check = true;
-             alert("Chứng minh nhân dân nhập đúng định dạng");
-         } while (!check)
+    check = false;
+    do {
+        let cmnd = prompt("Nhập số chứng minh nhân dân: ");
+        if (!isNaN(cmnd)) {
+            cmnd = Number.parseFloat(cmnd);
+        }
+        if (!Number.isInteger(cmnd)) {
+            alert("Chứng minh nhân dân không đúng định dạng");
+            continue;
+        }
+        if (cmnd < 10000000 || cmnd > 99999999) {
+            alert("Chứng minh nhân dân không đúng định dạng");
+            continue;
+        }
+        check = true;
+        alert("Chứng minh nhân dân nhập đúng định dạng");
+    } while (!check)
 
-         check = false;
-         do {
-             let birthday = prompt("Nhập ngày sinh: ");
-             if (birthday.charAt(2) === "/" && birthday.charAt(5) === "/") {
-                 let day = birthday.substring(0, 2);
-                 let month = birthday.substring(3, 5);
-                 let year = birthday.substring(6, 10);
-                 if (!isNaN(day) && !isNaN(month) && !isNaN(year)) {
-                     day = Number.parseFloat(day);
-                     month = Number.parseFloat(month);
-                     year = Number.parseFloat(year);
-                     if (Number.isInteger(day) && Number.isInteger(month) && Number.isInteger(year)) {
-                         if (day < 32 && month < 13 && year > 1950) {
-                             alert("Nhập đúng định dạng");
-                             check = true;
-                         }
-                     }
-                 }
-             } else {
-                 alert("Yêu cầu nhập lại cho đúng");
-             }
-         } while (!check)
+    check = false;
+    do {
+        let birthday = prompt("Nhập ngày sinh: ");
+        if (birthday.charAt(2) === "/" && birthday.charAt(5) === "/") {
+            let day = birthday.substring(0, 2);
+            let month = birthday.substring(3, 5);
+            let year = birthday.substring(6, 10);
+            if (!isNaN(day) && !isNaN(month) && !isNaN(year)) {
+                day = Number.parseFloat(day);
+                month = Number.parseFloat(month);
+                year = Number.parseFloat(year);
+                if (Number.isInteger(day) && Number.isInteger(month) && Number.isInteger(year)) {
+                    if (day < 32 && month < 13 && year > 1950) {
+                        alert("Nhập đúng định dạng");
+                        check = true;
+                    }
+                }
+            }
+        } else {
+            alert("Yêu cầu nhập lại cho đúng");
+        }
+    } while (!check)
 
-         check = false
-         do {
-             let rentDay = prompt("Nhập số ngày thuê: ");
-             if (!isNaN(rentDay)) {
-                rentDay = Number.parseFloat(rentDay);
-             } if (Number.isInteger(rentDay)) {
-                 if (rentDay > 0) {
-                     alert("Nhập đúng định dạng");
-                     check = true;
-                 }
-             } else if (!check) {
-                 alert("Yêu cầu nhập lại");
-             }
-         } while (!check)
+    check = false
+    do {
+        let rentDay = prompt("Nhập số ngày thuê: ");
+        if (!isNaN(rentDay)) {
+            rentDay = Number.parseFloat(rentDay);
+        }
+        if (Number.isInteger(rentDay)) {
+            if (rentDay > 0) {
+                alert("Nhập đúng định dạng");
+                check = true;
+            }
+        } else if (!check) {
+            alert("Yêu cầu nhập lại");
+        }
+    } while (!check)
 
-         check = false;
-         do {
-             let people = prompt("Nhập số người đi kèm");
-             if (!isNaN(people)) {
-                 people = Number.parseFloat(people);
-             }
-             if (Number.isInteger(people)) {
-                 if (people > 0) {
-                     alert("Nhập đúng định dạng");
-                     check = true;
-                 }
-             } else if (!check) {
-                 alert("Yêu cầu nhập lại");
-             }
-         } while (!check)
+    check = false;
+    do {
+        let people = prompt("Nhập số người đi kèm");
+        if (!isNaN(people)) {
+            people = Number.parseFloat(people);
+        }
+        if (Number.isInteger(people)) {
+            if (people > 0) {
+                alert("Nhập đúng định dạng");
+                check = true;
+            }
+        } else if (!check) {
+            alert("Yêu cầu nhập lại");
+        }
+    } while (!check)
 
-         let name1 = "";
-         let name = prompt("Nhập tên khách hàng: ");
-         name = name.trim().toLowerCase();
-         for (let i = 0; i < name.length; i++) {
-             if (name.charAt(i) === " " && name.charAt(i+1) === " ") {
-                 continue;
-             }
-             if (i === 0 || name.charAt(i-1) === " ") {
-                 name1 += name.charAt(i).toUpperCase();
-                 continue;
-             }
-             name1 += name.charAt(i);
-         }
-         name = name1
-         alert(name);
+    let name1 = "";
+    let name = prompt("Nhập tên khách hàng: ");
+    name = name.trim().toLowerCase();
+    for (let i = 0; i < name.length; i++) {
+        if (name.charAt(i) === " " && name.charAt(i + 1) === " ") {
+            continue;
+        }
+        if (i === 0 || name.charAt(i - 1) === " ") {
+            name1 += name.charAt(i).toUpperCase();
+            continue;
+        }
+        name1 += name.charAt(i);
+    }
+    name = name1
+    alert(name);
 
-         let address1 = "";
-         let address = prompt("Nhập địa chỉ khách hàng: ");
-         address = address.trim().toLowerCase();
-         for (let i = 0; i < address.length; i++) {
-             if (address.charAt(i) === " " && address.charAt(i+1) === " ") {
-                 continue;
-             }
-             if (i === 0 || address.charAt(i-1) === " ") {
-                 address1 += name.charAt(i).toUpperCase();
-                 continue;
-             }
-             address1 += name.charAt(i);
-         }
-         address = address1
-         alert(address);
+    let address1 = "";
+    let address = prompt("Nhập địa chỉ khách hàng: ");
+    address = address.trim().toLowerCase();
+    for (let i = 0; i < address.length; i++) {
+        if (address.charAt(i) === " " && address.charAt(i + 1) === " ") {
+            continue;
+        }
+        if (i === 0 || address.charAt(i - 1) === " ") {
+            address1 += name.charAt(i).toUpperCase();
+            continue;
+        }
+        address1 += name.charAt(i);
+    }
+    address = address1
+    alert(address);
 
-         let typeCustomer1 = "";
-         let typeCustomer = prompt("Nhập loại khách hàng: ");
-         typeCustomer = typeCustomer.trim().toLowerCase();
-         for (let i = 0; i < typeCustomer.length; i++) {
-             if (name.charAt(i) === " " && name.charAt(i+1) === " ") {
-                 continue;
-             }
-             if (i === 0 || name.charAt(i-1) === " ") {
-                 typeCustomer1 += name.charAt(i).toUpperCase();
-                 continue;
-             }
-             typeCustomer1 += typeCustomer.charAt(i);
-         }
-         typeCustomer = typeCustomer1;
-         alert(typeCustomer);
-      </script>
+    let typeCustomer1 = "";
+    let typeCustomer = prompt("Nhập loại khách hàng: ");
+    typeCustomer = typeCustomer.trim().toLowerCase();
+    for (let i = 0; i < typeCustomer.length; i++) {
+        if (name.charAt(i) === " " && name.charAt(i + 1) === " ") {
+            continue;
+        }
+        if (i === 0 || name.charAt(i - 1) === " ") {
+            typeCustomer1 += name.charAt(i).toUpperCase();
+            continue;
+        }
+        typeCustomer1 += typeCustomer.charAt(i);
+    }
+    typeCustomer = typeCustomer1;
+    alert(typeCustomer);
+</script>
 </body>
 </html>

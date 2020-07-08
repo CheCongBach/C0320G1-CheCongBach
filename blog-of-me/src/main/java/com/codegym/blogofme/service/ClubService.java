@@ -10,6 +10,7 @@ public interface ClubService {
     Page<Club> findAllClub(Pageable pageable);
 
     List<Club> findAllClubs();
+
     Club findByIdClub(Long id);
 
     void saveClub(Club club);

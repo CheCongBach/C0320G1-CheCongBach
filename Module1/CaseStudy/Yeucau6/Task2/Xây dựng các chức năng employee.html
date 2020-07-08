@@ -6,115 +6,120 @@
     <title>Employee</title>
 </head>
 <body>
-     <script>
-         let arrListEmployee = [];
-         let regExpEmail = /\S+@\S+\.\S+/;
-         let regExpBirthday = /^\d{2}[./-]\d{2}[./-]\d{4}$/;
-         let regExpCmnd = /^[\d]{8,8}$/;
-         let regExpPhone = /^\d+$/;
-         function displayMainMenu() {
-             let choose = parseInt(prompt("1.Add New Employee: " + "\n" + "2.Display Employee Information: " + "\n" +
-             "3.Salary Of Employee: "));
-             switch (choose) {
-                 case 1: {
-                     addNewEmployee();
-                     break;
-                 }
-                 case 2: {
-                     displayInformationEmployee();
-                     break;
-                 }
-                 case 3: {
-                     salaryOfEmployee();
-                     break;
-                 }
-                 default: {
-                     alert("Hãy chọn một chức năng");
-                 }
-             }
-         }
-         function addNewEmployee() {
-             let check = false;
-             let employee = new Employee();
-             let name = prompt("Nhập tên Employee: ");
-             let birthday;
-             do {
-                 birthday = prompt("Nhập ngày tháng năm sinh Employee: ");
-                 if (regExpBirthday.test(birthday)) {
-                     check = true;
-                 } else {
-                     alert("Nhập sai định dạng vui lòng nhập lại");
-                 }
-             } while (!check);
-             check = false;
-             let phone;
-             do {
-                 phone = prompt("Nhập số điện thoại Employee: ");
-                 if (regExpPhone.test(phone)) {
-                     check = true;
-                 } else {
-                     alert("Bạn đã nhập sai định dạng vui lòng nhập lại");
-                 }
-             } while (!check);
-             check = false;
-             let email;
-             do {
-                 email = prompt("Nhập email Employee: ");
-                 if (regExpEmail.test(email)) {
-                     check = true;
-                 } else {
-                     alert("Bạn đã nhập sai định dạng vui lòng nhập lại");
-                 }
-             } while (!check);
-             check = false;
-             let cmnd;
-             do {
-                 cmnd = prompt("Nhập cmnd Employee: ");
-                 if (regExpCmnd.test(cmnd)) {
-                     check = true;
-                 } else {
-                     alert("Nhập sai định dạng vui lòng nhập lại");
-                 }
-             } while (!check);
-             let level = prompt("Nhập trình độ Employee: ");
-             let location = prompt("Nhập vị trí Employee: ");
-             employee.setName(name);
-             employee.setBirthday(birthday);
-             employee.setPhone(phone);
-             employee.setEmail(email);
-             employee.setCmnd(cmnd);
-             employee.setLevel(level);
-             employee.setLocation(location);
-             arrListEmployee.push(employee);
-             alert("Bạn đã thêm thành công");
-             displayMainMenu();
-         }
-         function displayInformationEmployee() {
-             let temp = "";
-             for (let i = 0; i < arrListEmployee.length; i++) {
-                 temp += i + " .Name " + arrListEmployee[i].getName() + "\n";
-             }
-             let chooseDisplay = parseInt(prompt(temp));
-             alert("1.Tên Employee: " + arrListEmployee[chooseDisplay].getName() + "\n"
-             + "2.Ngày tháng năm sinh: " + arrListEmployee[chooseDisplay].getBirthday() + "\n"
-             + "3.Số điện thoại: " + arrListEmployee[chooseDisplay].getPhone() + "\n"
-             + "4.Email: " + arrListEmployee[chooseDisplay].getEmail() + "\n"
-             + "5.Cmnd: " + arrListEmployee[chooseDisplay].getCmnd() + "\n"
-             + "6.Level: " + arrListEmployee[chooseDisplay].getLevel() + "\n"
-             + "7.Location: " + arrListEmployee[chooseDisplay].getLocation());
-             displayMainMenu();
-         }
-         function  salaryOfEmployee() {
-             let temp = "";
-             for (let i = 0; i < arrListEmployee.length; i++) {
-                 temp += i + " .Name " + arrListEmployee[i].getName() + "\n";
-             }
-             let chooseDisplay = parseInt(prompt(temp));
-             alert(" Lương của nhân viên " + arrListEmployee[chooseDisplay].getName() + " là: "
-             + arrListEmployee[chooseDisplay].getSalary());
-             displayMainMenu();
-         }
-         displayMainMenu();
-     </script>
+<script>
+    let arrListEmployee = [];
+    let regExpEmail = /\S+@\S+\.\S+/;
+    let regExpBirthday = /^\d{2}[./-]\d{2}[./-]\d{4}$/;
+    let regExpCmnd = /^[\d]{8,8}$/;
+    let regExpPhone = /^\d+$/;
+
+    function displayMainMenu() {
+        let choose = parseInt(prompt("1.Add New Employee: " + "\n" + "2.Display Employee Information: " + "\n" +
+            "3.Salary Of Employee: "));
+        switch (choose) {
+            case 1: {
+                addNewEmployee();
+                break;
+            }
+            case 2: {
+                displayInformationEmployee();
+                break;
+            }
+            case 3: {
+                salaryOfEmployee();
+                break;
+            }
+            default: {
+                alert("Hãy chọn một chức năng");
+            }
+        }
+    }
+
+    function addNewEmployee() {
+        let check = false;
+        let employee = new Employee();
+        let name = prompt("Nhập tên Employee: ");
+        let birthday;
+        do {
+            birthday = prompt("Nhập ngày tháng năm sinh Employee: ");
+            if (regExpBirthday.test(birthday)) {
+                check = true;
+            } else {
+                alert("Nhập sai định dạng vui lòng nhập lại");
+            }
+        } while (!check);
+        check = false;
+        let phone;
+        do {
+            phone = prompt("Nhập số điện thoại Employee: ");
+            if (regExpPhone.test(phone)) {
+                check = true;
+            } else {
+                alert("Bạn đã nhập sai định dạng vui lòng nhập lại");
+            }
+        } while (!check);
+        check = false;
+        let email;
+        do {
+            email = prompt("Nhập email Employee: ");
+            if (regExpEmail.test(email)) {
+                check = true;
+            } else {
+                alert("Bạn đã nhập sai định dạng vui lòng nhập lại");
+            }
+        } while (!check);
+        check = false;
+        let cmnd;
+        do {
+            cmnd = prompt("Nhập cmnd Employee: ");
+            if (regExpCmnd.test(cmnd)) {
+                check = true;
+            } else {
+                alert("Nhập sai định dạng vui lòng nhập lại");
+            }
+        } while (!check);
+        let level = prompt("Nhập trình độ Employee: ");
+        let location = prompt("Nhập vị trí Employee: ");
+        employee.setName(name);
+        employee.setBirthday(birthday);
+        employee.setPhone(phone);
+        employee.setEmail(email);
+        employee.setCmnd(cmnd);
+        employee.setLevel(level);
+        employee.setLocation(location);
+        arrListEmployee.push(employee);
+        alert("Bạn đã thêm thành công");
+        displayMainMenu();
+    }
+
+    function displayInformationEmployee() {
+        let temp = "";
+        for (let i = 0; i < arrListEmployee.length; i++) {
+            temp += i + " .Name " + arrListEmployee[i].getName() + "\n";
+        }
+        let chooseDisplay = parseInt(prompt(temp));
+        alert("1.Tên Employee: " + arrListEmployee[chooseDisplay].getName() + "\n"
+            + "2.Ngày tháng năm sinh: " + arrListEmployee[chooseDisplay].getBirthday() + "\n"
+            + "3.Số điện thoại: " + arrListEmployee[chooseDisplay].getPhone() + "\n"
+            + "4.Email: " + arrListEmployee[chooseDisplay].getEmail() + "\n"
+            + "5.Cmnd: " + arrListEmployee[chooseDisplay].getCmnd() + "\n"
+            + "6.Level: " + arrListEmployee[chooseDisplay].getLevel() + "\n"
+            + "7.Location: " + arrListEmployee[chooseDisplay].getLocation());
+        displayMainMenu();
+    }
+
+    function salaryOfEmployee() {
+        let temp = "";
+        for (let i = 0; i < arrListEmployee.length; i++) {
+            temp += i + " .Name " + arrListEmployee[i].getName() + "\n";
+        }
+        let chooseDisplay = parseInt(prompt(temp));
+        alert(" Lương của nhân viên " + arrListEmployee[chooseDisplay].getName() + " là: "
+            + arrListEmployee[chooseDisplay].getSalary());
+        displayMainMenu();
+    }
+
+    displayMainMenu();
+</script>
 </body>
 </html>

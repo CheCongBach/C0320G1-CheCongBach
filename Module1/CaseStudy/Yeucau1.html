@@ -5,30 +5,30 @@
     <title>Yêu cầu 1</title>
 </head>
 <body>
-     <script>
-         let name = prompt("Nhập tên khách hàng", "");
-         let cmnd = prompt("Nhập số chứng minh", "");
-         let birthday = prompt("Nhập ngày tháng năm sinh", "");
-         let email = prompt("Nhập địa chỉ email", "");
-         let address = prompt("Nhập địa chỉ", "");
-         let typeCustomer = prompt("Nhập loại khách hàng", "");
-         let discount = parseInt(prompt("Giam giá", ""));
-         let soluongdikem = prompt("Số lượng đi kèm", "");
-         let rentDay = parseInt(prompt("Số ngày thuê", ""));
-         let typeService = prompt("Loại dich vụ", "");
-         let typeRoom = prompt("Loại phòng thuê", "");
-         document.write("name:"+name+"<br>"+"cmnd:"+cmnd+"<br>"+"birthday:"+birthday+"<br>"+"email:"+email+"<br>"+"address"+address+"<br>"+"typeCustomer"+typeCustomer+"<br>"+"discount"+discount+"<br>"+"soluongdikem"+soluongdikem+"<br>")
-         let totalPay;
-         if (typeRoom == "villa") {
-             totalPay = 500 * rentDay * (1 - discount/100);
-             document.write(totalPay);
-         } else if (typeRoom == "house") {
-             totalPay = 300 * rentDay * (1 - discount/100);
-             document.write(totalPay);
-         } else if (typeRoom == "room") {
-             totalPay = 100 * rentDay * (1 - discount/100);
-             document.write(totalPay);
-         }
-     </script>
+<script>
+    let name = prompt("Nhập tên khách hàng", "");
+    let cmnd = prompt("Nhập số chứng minh", "");
+    let birthday = prompt("Nhập ngày tháng năm sinh", "");
+    let email = prompt("Nhập địa chỉ email", "");
+    let address = prompt("Nhập địa chỉ", "");
+    let typeCustomer = prompt("Nhập loại khách hàng", "");
+    let discount = parseInt(prompt("Giam giá", ""));
+    let soluongdikem = prompt("Số lượng đi kèm", "");
+    let rentDay = parseInt(prompt("Số ngày thuê", ""));
+    let typeService = prompt("Loại dich vụ", "");
+    let typeRoom = prompt("Loại phòng thuê", "");
+    document.write("name:" + name + "<br>" + "cmnd:" + cmnd + "<br>" + "birthday:" + birthday + "<br>" + "email:" + email + "<br>" + "address" + address + "<br>" + "typeCustomer" + typeCustomer + "<br>" + "discount" + discount + "<br>" + "soluongdikem" + soluongdikem + "<br>")
+    let totalPay;
+    if (typeRoom == "villa") {
+        totalPay = 500 * rentDay * (1 - discount / 100);
+        document.write(totalPay);
+    } else if (typeRoom == "house") {
+        totalPay = 300 * rentDay * (1 - discount / 100);
+        document.write(totalPay);
+    } else if (typeRoom == "room") {
+        totalPay = 100 * rentDay * (1 - discount / 100);
+        document.write(totalPay);
+    }
+</script>
 </body>
 </html>

@@ -5,29 +5,36 @@
     <title>Chuyển đổi đơn vị</title>
 </head>
 <body>
-      <h3>Đơn vị Feet <input type="text" id="feet"></h3>
-      <h3>Đơn vị Meters <input type="text" id="meters"></h3>
-      <h3>Từ Meters sang Feet <input type="text" id="ketqua1"> <button type="button" onclick="showMessage1()">Hiển thị</button></h3>
-      <h3>Từ Feet sang Meters <input type="text" id="ketqua2"> <button type="button" onclick="showMessage2()">Hiển thị</button></h3>
-      <script>
-         function Feet(number) {
-             let result1 = 3.279 * number;
-             return result1;
-         }
-         function Meters(number) {
-             let result2 = 0.305 * number;
-             return result2;
-         }
-         function showMessage1() {
-             let number1 = document.getElementById("meters").value;
-             let result3 = Feet(number1);
-             document.getElementById("ketqua1").value = result3;
-         }
-         function showMessage2() {
-             let number2 = document.getElementById("feet").value;
-             let result4 = Meters(number2);
-             document.getElementById("ketqua2").value = result4;
-         }
-      </script>
+<h3>Đơn vị Feet <input type="text" id="feet"></h3>
+<h3>Đơn vị Meters <input type="text" id="meters"></h3>
+<h3>Từ Meters sang Feet <input type="text" id="ketqua1">
+    <button type="button" onclick="showMessage1()">Hiển thị</button>
+</h3>
+<h3>Từ Feet sang Meters <input type="text" id="ketqua2">
+    <button type="button" onclick="showMessage2()">Hiển thị</button>
+</h3>
+<script>
+    function Feet(number) {
+        let result1 = 3.279 * number;
+        return result1;
+    }
+
+    function Meters(number) {
+        let result2 = 0.305 * number;
+        return result2;
+    }
+
+    function showMessage1() {
+        let number1 = document.getElementById("meters").value;
+        let result3 = Feet(number1);
+        document.getElementById("ketqua1").value = result3;
+    }
+
+    function showMessage2() {
+        let number2 = document.getElementById("feet").value;
+        let result4 = Meters(number2);
+        document.getElementById("ketqua2").value = result4;
+    }
+</script>
 </body>
 </html>

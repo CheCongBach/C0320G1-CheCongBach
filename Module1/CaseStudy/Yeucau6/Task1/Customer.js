@@ -71,10 +71,10 @@ let Customer = function () {
             money = 500;
         } else if (this.typeService === "House") {
             money = 300;
-        } else if ( this.typeService === "Room") {
+        } else if (this.typeService === "Room") {
             money = 200;
         }
-        let totalPayy = this.rentDay * money * (1 - this.discount/100);
+        let totalPayy = this.rentDay * money * (1 - this.discount / 100);
         return totalPayy;
     }
 }
