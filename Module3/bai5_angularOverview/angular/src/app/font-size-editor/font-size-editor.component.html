@@ -1,0 +1,16 @@
+<h1>Font Size Editor</h1>
+<button (click)="showFontSize()">Show</button>
+<div [hidden]="isHidden">
+  <fieldset>
+    <legend>
+      <div>
+        <label>Enter Font Size(px):</label>
+        <input type="number" [value]="fontSize" (change)="onChange($event.target.value)">
+      </div>
+      <p class="output" [style.fontSize.px]="fontSize">
+        Chế Công Bách
+      </p>
+    </legend>
+  </fieldset>
+</div>
+

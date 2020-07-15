@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="audio.js"></script>
+</head>
+<style>
+    .current-song a {
+        color: red;
+    }
+    a {
+        text-decoration: none;
+    }
+</style>
+<body>
+<audio src="" controls id="audioPlayer"></audio>
+<ul id="playlist">
+    <li class="current-song"><a
+            href="https://aredir.nixcdn.com/NhacCuaTui999/MotCuLua-BichPhuong-6288019.mp3?st=ACnCh43eKvy01uNy-7q0BA&e=1594288355">
+        Một Cú Lừa</a></li>
+    <li class="current-song"><a
+            href="https://aredir.nixcdn.com/NhacCuaTui981/EmCoConDungSoNayKhong-ThaiDinh-5947752.mp3?st=yi0zhC0K56RXkBZB_s39yw&e=1594307262">Em Có
+    Còn Dùng Số Này Không</a></li>
+</ul>
+<script>
+    function audioPlayer() {
+        $("#audioPlayer")[0].src = $("#pla")
+    }
+    $(document).ready(
+        function audioPlayer() {
+            let currentSong = 0;
+            $("#audioPlayer")[0].src = $("#playlist li a")[0];
+            $('#audioPlayer')[0].play();
+            $("#playlist li a").click(function (e) {
+                e.preventDefault();
+                $("#audioPlayer")[0].src = this;
+                $("#audioPlayer")[0].play();
+                $("#playlist li").removeClass("current-song");
+                currentSong = $(this).parent().index();
+                $(this).parent().addClass("current-song");
+                $("#audioPlayer")[0].addEventListener("ended", function () {
+                    currentSong++;
+                    if (currentSong == $("#playlist li a").length)
+                        currentSong = 0;
+                    $("#playlist li").removeClass("current-song");
+                    $("#playlist li:eq(" + currentSong + ")").addClass("current-song");
+                    $("#audioPlayer")[0].src = $("#playlist li a")[currentSong].href;
+                    $("#audioPlayer")[0].play();
+                })
+            })
+        })
+</script>
+</body>
+</html>
+</html>

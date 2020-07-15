@@ -1,0 +1,26 @@
+<p>calculator works!</p>
+<div>
+  <input type="number" class="form-input"
+         [value]="first"
+         (change)="onFirstChange($event.target.value)">
+  <select class="form-input"
+  [value]="operator"
+  (change)="onFirstChange($event.target.value)">
+    <option value="+">+</option>
+    <option value="-">-</option>
+    <option value="*">*</option>
+    <option value="/">/</option>
+  </select>
+  <input type="number" class="form-input"
+  [value]="second"
+  (change)="onSecondChange($event.target.value)">
+</div>
+<div>
+  <button class="form-input" (click)="calculator()">
+    Thực thi
+  </button>
+</div>
+<br>
+<div class="output">
+  <h2>Kết quả là: {{output}}</h2>
+</div>
